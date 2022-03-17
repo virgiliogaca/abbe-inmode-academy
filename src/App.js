@@ -3,10 +3,11 @@ import {ProffessorLayout} from "./components/proffessorLayout"
 import title from "./assets/logo-inmode.png"
 import date from "./assets/save-the-date.png"
 import {InfoLayout} from "./components/infoLayout"
+import {FormLayout} from "./components/formLayout"
 
 function App() {
   return (
-    <div class="bg-layout-image bg-center bg-cover h-[calc(200vh)]">
+    <div class="bg-layout-image bg-center bg-cover h-[calc(235vh)]">
       <div class="absolute ml-[38%] mt-10">
         <img src={title} alt=""></img>
       </div>
@@ -22,8 +23,11 @@ function App() {
         <ProffessorLayout/>
       </div>
 
-      <div class="absolute mt-[820px] ml-[32%]">
+      <div class="absolute mt-[820px] ml-[605px]">
         <InfoLayout/>
+      </div>
+      <div class="absolute mt-[820px] ml-[1100px]">
+        <FormLayout/>
       </div>
     </div>
   );
