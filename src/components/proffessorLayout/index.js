@@ -1,0 +1,1 @@
+export {default as ProffessorLayout} from './proffessor-layout.component'

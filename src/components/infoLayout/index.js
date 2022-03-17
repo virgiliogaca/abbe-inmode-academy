@@ -1,0 +1,1 @@
+export {default as InfoLayout} from './info-layout.component'
