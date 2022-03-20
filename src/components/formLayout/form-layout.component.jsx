@@ -153,7 +153,7 @@ const FormLayout = () => {
                 lg:ml-16 lg:-mt-36 lg:w-[274px] lg:h-44
                 md:ml-14 md:-mt-36 md:w-[274px] md:h-44
                 xs:ml-14 xs:-mt-36 xs:w-[274px] xs:h-44
-                xxs:ml-11 xxs:-mt-36 xxs:w-[274px] xxs:h-44">
+                xxs:ml-11 xxs:-mt-36 xxs:w-[274px] xxs:h-40">
                     <div class="
                     xl:ml-4">
                         <text class="text-white font-extralight
@@ -162,13 +162,6 @@ const FormLayout = () => {
                         md:ml-14
                         xs:ml-14 xs:text-sm
                         xxs:ml-16 xxs:text-xs">{'A TODOS LOS QUE LLEVEN'}</text>
-                        <br />
-                        <text class="text-white font-normal
-                        xl:ml-[52px] 
-                        lg:ml-[52px] 
-                        md:ml-[52px]
-                        xs:ml-14 xs:text-sm
-                        xxs:ml-[60px] xxs:text-xs">{'DE UN KIT DE AGUJAS CON'}</text>
                         <br />
                         <text class="text-white font-extralight
                         xl:ml-4 
