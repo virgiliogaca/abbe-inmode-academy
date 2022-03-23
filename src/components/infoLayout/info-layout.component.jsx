@@ -150,11 +150,7 @@ const InfoLayout = () => {
                 <br />
                 <text class="text-white font-light 
                 xl:text-2xl 
-                lg:text-lg">POR EL DR. PAOLO ROVATTI Y LA DRA.</text>
-                <br />
-                <text class="text-white font-light 
-                xl:text-2xl 
-                lg:text-lg">SHEILA NAZARIAN</text>
+                lg:text-lg">POR EL DR. PAOLO ROVATTI.</text>
                 <br />
                 <text class="text-white font-light 
                 xl:text-2xl

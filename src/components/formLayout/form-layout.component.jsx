@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 import { TextField } from "@mui/material";
 import { sendUserInfo } from "../../api/googleSheets"
-import morpheus from '../../assets/MORPHEUS-SOLO.png'
+import morpheus from '../../assets/morpheusbody.png'
 import forma from '../../assets/FORMA-SOLO.png'
 
 const FormLayout = () => {
@@ -185,11 +185,11 @@ const FormLayout = () => {
                         xs:ml-14 xs:text-xs
                         xxs:ml-14 xxs:text-xs">UN VALE POR UNA CAJA DE</text>
                         <img class='
-                        xl:w-28 
-                        xl:ml-[75px] 
-                        lg:w-28 lg:ml-[75px] 
-                        md:w-28 md:ml-[75px]
-                        xs:w-28 xs:ml-[75px]
+                        xl:w-36 
+                        xl:ml-[65px] 
+                        lg:w-36 lg:ml-[65px] 
+                        md:w-36 md:ml-[65px] 
+                        xs:w-36 xs:ml-[65px] 
                         xxs:w-24 xxs:ml-[80px]' src={morpheus} alt="" />
                         <text class="text-white font-normal
                         xl:ml-3 
