@@ -190,7 +190,7 @@ const FormLayout = () => {
                         lg:w-36 lg:ml-[65px] 
                         md:w-36 md:ml-[65px] 
                         xs:w-36 xs:ml-[65px] 
-                        xxs:w-24 xxs:ml-[80px]' src={morpheus} alt="" />
+                        xxs:w-32 xxs:ml-[80px]' src={morpheus} alt="" />
                         <text class="text-white font-normal
                         xl:ml-3 
                         lg:ml-3 
