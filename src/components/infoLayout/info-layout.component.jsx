@@ -64,6 +64,14 @@ const InfoLayout = () => {
             md:ml-5 md:mt-10
             xs:ml-5 xs:mt-10
             xxs:ml-5 xxs:mt-10">
+                <text class="text-teal-600 font-semibold 
+                xl:text-lg 
+                lg:text-sm">15:15-17:00 APARATOLOGÍA Y NO QUIRÚRGICO</text>
+                <br />
+                <text class="text-teal-600 font-semibold 
+                xl:text-lg 
+                lg:text-sm">¿QUÉ DEBO INTEGRAR A MI PRÁCTICA?</text>
+                <br />
                 <text class="text-white font-light 
                 xl:text-2xl 
                 lg:text-lg">DISPOSITIVOS QUIRÚRGICOS</text>
