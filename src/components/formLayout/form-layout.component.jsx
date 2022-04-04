@@ -2,17 +2,16 @@ import * as React from 'react';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import { TextField } from "@mui/material";
+import Switch from '@mui/material/Switch';
 import { sendUserInfo } from "../../api/googleSheets"
-import morpheus from '../../assets/morpheusbody.png'
-import forma from '../../assets/FORMA-SOLO.png'
 
 const FormLayout = () => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [entity, setEntity] = useState('');
-    const [friendName, setFriendName] = useState('');
-    const [friendPhone, setFriendPhone] = useState('');
+    const [inmodeClient, setInmodeClient] = useState(false);
+    const [preApproved, setPreApproved] = useState(false);
 
     const handleName = (event) => {
         setName(event.target.value);
@@ -26,21 +25,21 @@ const FormLayout = () => {
     const handleEntity = (event) => {
         setEntity(event.target.value);
       };
-    const handleFriendName = (event) => {
-        setFriendName(event.target.value);
-      };
-    const handleFriendPhone = (event) => {
-        setFriendPhone(event.target.value);
-      };
+    const handleInmodeSwitch = (event) => {
+        setInmodeClient(event.target.checked);
+    };
+    const handlePreApprovedSwitch = (event) => {
+        setPreApproved(event.target.checked);
+    };
 
     const saveForm = () => {
-        sendUserInfo(name, phone, email, entity, friendName, friendPhone)
+        sendUserInfo(name, phone, email, entity, inmodeClient, preApproved)
         setEmail('');
         setEntity('');
-        setFriendName('');
-        setFriendPhone('');
         setName('');
         setPhone('');
+        setInmodeClient(false);
+        setPreApproved(false);
     };
     
     return (
@@ -78,7 +77,7 @@ const FormLayout = () => {
                 md:ml-48 md:-mt-10
                 xs:ml-24 xs:-mt-10
                 xxs:ml-20 xxs:-mt-10">
-                    <TextField id="filled-basic" label="Nombre" style={{backgroundColor: 'white'}} color="primary" variant="filled" onChange={handleName} value={name}/>
+                    <TextField id="filled-basic" label="Nombre" style={{backgroundColor: 'white', width: '350px'}} color="primary" variant="filled" onChange={handleName} value={name}/>
                 </div>
             </div>
             <div>
@@ -97,7 +96,7 @@ const FormLayout = () => {
                 md:ml-48 md:-mt-10
                 xs:ml-24 xs:-mt-10
                 xxs:ml-20 xxs:-mt-10">
-                    <TextField id="filled-basic" label="WhatsApp" style={{backgroundColor: 'white'}} color="primary" variant="filled" onChange={handlePhone} value={phone}/>
+                    <TextField id="filled-basic" label="WhatsApp" style={{backgroundColor: 'white', width: '350px'}} color="primary" variant="filled" onChange={handlePhone} value={phone}/>
                 </div>
             </div>
             <div>
@@ -111,6 +110,9 @@ const FormLayout = () => {
                     <text class="text-white font-light 
                     xl:text-lg 
                     lg:text-base">CORREO</text>
+                    <text class="text-red-600 font-light 
+                    xl:text-lg 
+                    lg:text-base">*</text>
                 </div>
                 <div class="
                 xl:-mt-12 
@@ -118,12 +120,12 @@ const FormLayout = () => {
                 md:ml-48 md:-mt-10
                 xs:ml-24 xs:-mt-10
                 xxs:ml-20 xxs:-mt-10">
-                    <TextField id="filled-basic" label="Correo" style={{backgroundColor: 'white'}} color="primary" variant="filled" onChange={handleEmail} value={email}/>
+                    <TextField id="filled-basic" label="Correo" style={{backgroundColor: 'white', width: '350px'}} color="primary" variant="filled" onChange={handleEmail} value={email}/>
                 </div>
             </div>
             <div>
                 <div class="
-                xl:mt-10 xl:-ml-24 
+                xl:mt-10 xl:-ml-24
                 lg:mt-8 lg:-ml-24 
                 md:mt-10 md:ml-24
                 xs:mt-12 xs:ml-4
@@ -139,70 +141,37 @@ const FormLayout = () => {
                 md:ml-48 md:-mt-10
                 xs:ml-24 xs:-mt-10
                 xxs:ml-20 xxs:-mt-10">
-                    <TextField id="filled-basic" label="Estado" style={{backgroundColor: 'white'}} color="primary" variant="filled" onChange={handleEntity} value={entity}/>
+                    <TextField id="filled-basic" label="Estado" style={{backgroundColor: 'white', width: '350px'}} color="primary" variant="filled" onChange={handleEntity} value={entity}/>
                 </div>
             </div>
-            <div class="bg-white z-0 rounded-xl absolute 
-            xl:w-[415px] xl:h-72 xl:-ml-28 xl:mt-52 
+            <div class="
+                xl:ml-8 
+                lg:ml-8 
+                md:ml-8
+                xs:ml-8
+                xxs:ml-8">
+                    <text class="text-red-600 font-semibold">*Datos requeridos</text>
+                </div>
+            <div class="bg-teal-500 z-0 rounded-lg absolute 
+            xl:w-[415px] xl:h-40 xl:-ml-20 xl:mt-10
             lg:w-[380px] lg:h-72 lg:-ml-20 lg:mt-52
             md:w-[380px] md:h-72 md:ml-20 md:mt-52
             xs:w-[380px] xs:h-72 xs:-ml-11 xs:mt-52
             xxs:w-[360px] xxs:h-72 xxs:-ml-11 xxs:mt-56">
-                <div class="bg-teal-400 shadow-lg shadow-gray-500 z-10 
-                xl:ml-14 xl:-mt-36 xl:w-[305px] xl:h-44
+                <div class="bg-white shadow-lg shadow-gray-500 z-10 rounded-2xl
+                xl:ml-7 xl:-mt-5 xl:w-[250px] xl:h-7
                 lg:ml-16 lg:-mt-36 lg:w-[274px] lg:h-44
                 md:ml-14 md:-mt-36 md:w-[274px] md:h-44
                 xs:ml-14 xs:-mt-36 xs:w-[274px] xs:h-44
                 xxs:ml-11 xxs:-mt-36 xxs:w-[274px] xxs:h-40">
                     <div class="
                     xl:ml-4">
-                        <text class="text-white font-extralight
-                        xl:ml-14 
+                        <text class="italic font-serif
+                        xl:ml-4 xl:text-xl
                         lg:ml-14 
                         md:ml-14
                         xs:ml-14 xs:text-sm
-                        xxs:ml-16 xxs:text-xs">{'A TODOS LOS QUE LLEVEN'}</text>
-                        <br />
-                        <text class="text-white font-extralight
-                        xl:ml-4 
-                        lg:ml-4 
-                        md:ml-4
-                        xs:ml-4 xs:text-sm
-                        xxs:ml-5 xxs:text-xs">A </text>
-                        <text class="text-white font-bold text-sm">1 INVITADO CIRUJANO PLÁSTICO</text>
-                        <br />
-                        <text class="text-white font-extralight text-sm 
-                        xl:ml-8 
-                        lg:ml-8 
-                        md:ml-8
-                        xs:ml-8 xs:text-sm
-                        xxs:ml-11 xxs:text-xs">A LAS CONFERENCIAS RECIBIRÁN</text>
-                        <br />
-                        <text class="text-white font-normal
-                        xl:ml-14 
-                        lg:ml-14 
-                        md:ml-14
-                        xs:ml-14 xs:text-xs
-                        xxs:ml-14 xxs:text-xs">UN VALE POR UNA CAJA DE</text>
-                        <img class='
-                        xl:w-36 
-                        xl:ml-[65px] 
-                        lg:w-36 lg:ml-[65px] 
-                        md:w-36 md:ml-[65px] 
-                        xs:w-36 xs:ml-[65px] 
-                        xxs:w-32 xxs:ml-[80px]' src={morpheus} alt="" />
-                        <text class="text-white font-normal
-                        xl:ml-3 
-                        lg:ml-3 
-                        md:ml-3
-                        xs:ml-3 xs:text-xs 
-                        xxs:ml-3 xxs:text-xs">UN BOLETO PARA LA RIFA DE UN CABEZAL</text>
-                        <img src={forma} alt="" class='
-                        xl:w-16 xl:ml-24 
-                        lg:w-16 lg:ml-24 
-                        md:w-16 md:ml-24
-                        xs:w-16 xs:ml-24
-                        xxs:w-14 xxs:ml-[100px]'/>
+                        xxs:ml-16 xxs:text-xs">{'ENTRA EN LA RIFA:'}</text>
                     </div>
                 </div>
                 <div class="
@@ -212,66 +181,124 @@ const FormLayout = () => {
                 xs:ml-4 xs:mt-0
                 xxs:ml-4 xxs: mt-5">
                     <br />
-                    <text class="text-black font-normal text-lg 
+                    <text class="text-black font-semibold text-lg 
                     xl:ml-2 
                     lg:ml-2 
                     md:ml-2
                     xs:ml-2
-                    xxs:ml-2">NOMBRE*</text>
+                    xxs:ml-2">SOY CLIENTE INMODE**</text>
                     <div class="
-                    xl:-mt-10 xl:ml-28 
-                    lg:-mt-10 lg:ml-28 
-                    md:-mt-10 md:ml-28
-                    xs:-mt-10 xs:ml-28
-                    xxs:-mt-10 xxs:ml-28">
-                    <TextField id="filled-basic" label="Nombre" style={{backgroundColor: 'white'}} color="primary" variant="filled" onChange={handleFriendName} value={friendName}/>
+                    xl:-mt-8 xl:ml-72
+                    lg:-mt-8 lg:ml-72
+                    md:-mt-8 md:ml-72
+                    xs:-mt-8 xs:ml-72
+                    xxs:-mt-8 xxs:ml-72">
+                    <Switch color="default" checked={inmodeClient} onChange={handleInmodeSwitch}></Switch>
                     </div>
                     <br />
-                    <text class="text-black font-normal text-lg 
-                    xl:-ml-2 
-                    lg:-ml-2 
-                    md:-ml-2
-                    xs:-ml-2
-                    xxs:-ml-2">WHATSAPP*</text>
+                    <text class="text-black font-semibold text-lg 
+                    xl:ml-10
+                    lg:ml-10
+                    md:ml-10
+                    xs:ml-10
+                    xxs:ml-10">SOY CLIENTE ABBE</text>
+                    <br />
+                    <text class="text-black font-semibold text-lg 
+                    xl:ml-2 
+                    lg:ml-2 
+                    md:ml-2
+                    xs:ml-2
+                    xxs:ml-2">O ESTOY PRE-APROBADO**</text>
                     <div class="
-                    xl:-mt-11 xl:ml-28 
-                    lg:-mt-11 lg:ml-28 
-                    md:-mt-11 md:ml-28
-                    xs:-mt-11 xs:ml-28
-                    xxs:-mt-11 xxs:ml-28">
-                    <TextField id="filled-basic" label="WhatsApp" style={{backgroundColor: 'white'}} color="primary" variant="filled" onChange={handleFriendPhone} value={friendPhone}/>
+                    xl:-mt-12 xl:ml-72
+                    lg:-mt-12 lg:ml-72
+                    md:-mt-12 md:ml-72
+                    xs:-mt-12 xs:ml-72
+                    xxs:-mt-12 xxs:ml-72">
+                    <Switch color="default" checked={preApproved} onChange={handlePreApprovedSwitch}></Switch>
                     </div>
-                    <br />
-                    <text class="text-black font-normal text-md 
-                    xl:ml-16 
-                    lg:ml-16 
-                    md:ml-16
-                    xs:ml-16
-                    xxs:ml-14">**SE VERIFICARA EL NÚMERO AL</text>
-                    <br />
-                    <text class="text-black font-normal text-md 
-                    xl:ml-24 
-                    lg:ml-24 
-                    md:ml-24
-                    xs:ml-24
-                    xxs:ml-20">MOMENTO DE LA RIFA</text>
                 </div>
+            </div>
+            <div class="xl:mt-60">
+                <text class="text-white font-semibold text-xl 
+                        xl:-ml-16
+                        lg:-ml-16
+                        md:-ml-16
+                        xs:-ml-16
+                        xxs:-ml-16">**Toda la información será comprobada
+                </text>
+                        <br />
+                <text class="text-white font-semibold text-xl 
+                        xl:ml-2 
+                        lg:ml-2 
+                        md:ml-2
+                        xs:ml-2
+                        xxs:ml-2">al momento de la rifa.
+                </text>
+            </div>
+            <div class="bg-white rounded-lg absolute 
+            xl:w-[415px] xl:h-40 xl:-ml-20 xl:mt-10
+            lg:w-[380px] lg:h-72 lg:-ml-20 lg:mt-10
+            md:w-[380px] md:h-72 md:ml-20 md:mt-10
+            xs:w-[380px] xs:h-72 xs:-ml-11 xs:mt-10
+            xxs:w-[360px] xxs:h-72 xxs:-ml-11 xxs:mt-10">
                 <div class="
-                xl:mt-16 xl:ml-32 
-                lg:mt-16 lg:ml-28 
-                md:mt-16 md:ml-28
-                xs:mt-16 xs:ml-28
-                xxs:mt-16 xxs:ml-28">
-                    <text class="text-red-600 font-semibold">*Datos requeridos</text>
+                xl:ml-4 xl:-mt-3
+                lg:ml-4 
+                md:ml-4
+                xs:ml-4 xs:mt-0
+                xxs:ml-4 xxs: mt-5">
+                    <br />
+                    <text class="text-black font-semibold text-xl 
+                    xl:ml-32 
+                    lg:ml-2 
+                    md:ml-2
+                    xs:ml-2
+                    xxs:ml-2">IMPORTANTE:</text>
+                    <br />
+                    <text class="text-black font-semibold text-xl
+                    xl:ml-3
+                    lg:ml-3
+                    md:ml-3
+                    xs:ml-3
+                    xxs:ml-3">¡En caso de no ser cliente de Inmode o</text>
+                    <br />
+                    <text class="text-black font-semibold text-xl
+                    xl:ml-4
+                    lg:ml-4
+                    md:ml-4
+                    xs:ml-4
+                    xxs:ml-4">cliente de Abbe aún puedes participar</text>
+                    <br />
+                    <text class="text-black font-semibold text-xl
+                    xl:ml-36
+                    lg:ml-36
+                    md:ml-36
+                    xs:ml-36
+                    xxs:ml-36">en la rifa!</text>
+                    <br />
+                    <text class="text-black font-light text-xl
+                    xl:ml-7
+                    lg:ml-7
+                    md:ml-7
+                    xs:ml-7
+                    xxs:ml-7">Más información</text>
+                    <text class="text-black font-light text-xl underline
+                    xl:ml-1
+                    lg:ml-1
+                    md:ml-1
+                    xs:ml-1
+                    xxs:ml-1">al finalizar tu registro.</text>
+                    <br />
                 </div>
             </div>
             <div class="
-            xl:mt-[580px] xl:ml-4 
-            lg:mt-[580px] lg:ml-10 
-            md:mt-[580px] md:ml-48
-            xs:mt-[580px] xs:ml-20
-            xxs:mt-[580px] xxs:ml-[70px]">
-                <Button variant="contained" style={{width: '130px', height: '50px', borderRadius: "25px", backgroundColor: "rgb(45 212 191)"}} disabled={!name || !phone || !friendName || !friendPhone}
+            xl:mt-[250px] xl:ml-8 
+            lg:mt-[250px] lg:ml-10 
+            md:mt-[250px] md:ml-48
+            xs:mt-[250px] xs:ml-20
+            xxs:mt-[250px] xxs:ml-[70px]">
+                <Button variant="contained" style={{width: '200px', height: '60px', borderRadius: "25px", backgroundColor: "rgb(45 212 191)", fontSize: "20px"}} disabled={!name || !phone || !email}
                 onClick={() => saveForm()}>
                     ENVIAR
                 </Button>

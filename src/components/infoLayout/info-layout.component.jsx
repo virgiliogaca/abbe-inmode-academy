@@ -1,4 +1,3 @@
-import cirugiasEnVivo from '../../assets/facetite.png'
 import abbe from '../../assets/logo-abbe.png'
 
 const InfoLayout = () => {
@@ -29,7 +28,7 @@ const InfoLayout = () => {
                 lg:text-2xl 
                 md:text-3xl
                 xs:text-2xl
-                xxs:text-2xl">VIERNES 01 DE ABRIL</text>
+                xxs:text-2xl">JUEVES 05 DE MAYO</text>
             </div>
             <div class="bg-white 
             xl:w-[480px] xl:-ml-32 
@@ -38,7 +37,7 @@ const InfoLayout = () => {
             xs:h-1 xs:w-[350px] xs:-ml-8
             xxs:h-1 xxs:w-[350px] xxs:-ml-10"></div>
             <div class="
-            xl:-ml-14 
+            xl:-ml-24
             lg:-ml-10 
             md:ml-20
             xs:-ml-4
@@ -48,7 +47,7 @@ const InfoLayout = () => {
                 lg:text-sm 
                 md:text-xl
                 xs:text-lg
-                xxs:text-lg">CENTRO DE CONVENCIONES MAZATLÁN</text>
+                xxs:text-lg">BALLROOM C HOTEL HYATT, CAMPOS ELÍSEOS, CDMX</text>
             </div>
             <div class="mt-10">
                 <text class="text-white font-bold 
@@ -64,127 +63,20 @@ const InfoLayout = () => {
             md:ml-5 md:mt-10
             xs:ml-5 xs:mt-10
             xxs:ml-5 xxs:mt-10">
-                <text class="text-teal-600 font-semibold 
-                xl:text-lg 
-                lg:text-sm">15:15-17:00 APARATOLOGÍA Y NO QUIRÚRGICO</text>
-                <br />
-                <text class="text-teal-600 font-semibold 
-                xl:text-lg 
-                lg:text-sm">¿QUÉ DEBO INTEGRAR A MI PRÁCTICA?</text>
-                <br />
-                <text class="text-white font-light 
-                xl:text-2xl 
-                lg:text-lg">DISPOSITIVOS QUIRÚRGICOS</text>
-                <br />
-                <text class="text-white font-light
-                xl:text-2xl 
-                lg:text-lg">PARA MAXIMIZAR LOS RESULTADOS</text>
-                <br />
-                <text class="text-white font-light 
-                xl:text-2xl 
-                lg:text-lg">(BODYTITE)</text>
+                <text class="text-teal-500 font-semibold 
+                xl:text-xl 
+                lg:text-sm">10:00-17:00 HRS - PRESENTACIÓN/TALLER</text>
                 <br />
                 <br />
-                <text class="text-white font-light 
-                xl:text-2xl 
-                lg:text-lg">SALÓN CARNAVAL 2</text>
-            </div>
-            <div class="
-            xl:-ml-14 xl:mt-24 
-            lg:-ml-6 lg:mt-16 
-            md:ml-32 md:mt-16
-            xs:ml-9 xs:mt-8
-            xxs:ml-8 xxs:mt-8">
-                <text class="text-white font-extralight italic 
-                xl:text-4xl 
-                lg:text-2xl 
-                md:text-3xl
-                xs:text-2xl
-                xxs:text-2xl">SÁBADO 02 DE ABRIL</text>
-            </div>
-            <div class="bg-white 
-            xl:w-[480px] xl:-ml-32
-            lg:h-1 lg:w-[380px] lg:-ml-28 
-            md:h-1 md:w-[500px] md:ml-6
-            xs:h-1 xs:w-[350px] xs:-ml-8
-            xxs:h-1 xxs:w-[350px] xxs:-ml-10"></div>
-            <div class="
-            xl:-ml-14 
-            lg:-ml-10 
-            md:ml-20
-            xs:-ml-4
-            xxs:-ml-6">
-                <text class="text-white font-extralight 
-                xl:text-lg 
-                lg:text-sm 
-                md:text-xl
-                xs:text-lg
-                xxs:text-lg">CENTRO DE CONVENCIONES MAZATLÁN</text>
-            </div>
-            <div class="mt-10">
-                <text class="text-white font-bold 
-                xl:text-lg 
-                lg:text-sm 
-                md:text-lg
-                xs:text-lg
-                xxs:text-lg">CURSO INSTRUCCIONAL:</text>
-            </div>
-            <div class="
-            lg:-ml-24 lg:mt-10 
-            md:ml-5 md:mt-10
-            xs:ml-5 xs:mt-10
-            xxs:ml-5 xxs:mt-10">
-                <text class="text-white font-light 
-                xl:text-2xl 
-                lg:text-lg">CIRUGÍA FACIAL BUSCANDO</text>
-                <br />
-                <text class="text-white font-light 
-                xl:text-2xl 
-                lg:text-lg">RESULTADOS ARMÓNICOS</text>
-                <br />
-                <br />
-                <text class="text-white font-light 
-                xl:text-2xl 
-                lg:text-lg">SALÓN CARNAVAL 2</text>
-                <br />
-                <br />
-                <text class="text-teal-600 font-semibold 
-                xl:text-lg 
-                lg:text-sm">15:15 - 17:00 HRS - HOSPITAL SHARP MAZATLÁN</text>
-                <br />
-                <text class="text-white font-light 
-                xl:text-2xl 
-                lg:text-lg">TRES CIRUGÍAS EN VIVO REALIZADAS</text>
-                <br />
-                <text class="text-white font-light 
-                xl:text-2xl 
-                lg:text-lg">POR EL DR. PAOLO ROVATTI.</text>
-                <br />
-                <text class="text-white font-light 
-                xl:text-2xl
-                lg:text-lg">EN DONDE VEREMOS:</text>
-            </div>
-            <div class="
-            xl:-ml-20 xl:mt-8 xl:w-[360px] 
-            lg:w-[280px] lg:-ml-20 lg:mt-8 
-            md:w-[400px] md:ml-20 md:mt-8
-            xs:w-[280px] xs:ml-1 xs:mt-8
-            xxs:w-[280px] xxs:ml-1 xxs:mt-8">
-                <img src={cirugiasEnVivo} alt="" />
+                <text class="text-teal-500 font-semibold 
+                xl:text-xl 
+                lg:text-sm">17:00-19:00 HRS - CATA DE VINO</text>
             </div>
             <div class="
             lg:-ml-24 lg:mt-8 
             md:ml-5 md:mt-8
             xs:ml-5 xs:mt-8
             xxs:ml-5 xxs:mt-8">
-                <text class="text-teal-600 font-semibold 
-                xl:text-lg 
-                lg:text-sm">20:00 INMODE PARTY</text>
-                <br />
-                <text class="text-white font-light 
-                xl:text-2xl 
-                lg:text-lg">RESTAURANTE MAZATLECA</text>
-                <br />
                 <text class="text-white font-light 
                 xl:text-2xl 
                 lg:text-lg">BY</text>

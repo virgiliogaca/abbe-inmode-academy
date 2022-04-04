@@ -1,94 +1,60 @@
-import paolo from '../../assets/paolo-rovatti.png'
-import sheila from '../../assets/sheilanazarian.png'
-import alfredo from '../../assets/alfredo-hoyos.png'
-import sergio from '../../assets/sergio-ayuzo.png'
-import andres from '../../assets/andres-bello.png'
+import salvatore from '../../assets/Salvatore-Pagano.png'
+import stephen from '../../assets/Stephen-Mulholland.png'
+import mulhollandCV from '../../assets/Mulholland-CV.pdf'
+import salvatoreCV from '../../assets/Salvatore-CV.pdf'
 
 const ProffessorLayout = () => {
     return (
         <div class="">
             <div class="
-            sm:flex sm:items-center sm:space-x-16 sm:ml-0 
+            sm:flex sm:items-center sm:space-x-44 sm:-ml-14
             xs:ml-28
             xxs:ml-[105px]">
                 <div class="mt-11">
-                    <img src={paolo} class="
-                    2xl:w-40 
+                    <img src={stephen} class="
+                    2xl:w-72 
                     xl:w-32 
                     lg:w-32" alt="" />
                     <text class="font-bold text-white 
-                    2xl:-ml-1 2xl:text-base 
+                    2xl:ml-1 2xl:text-xl 
                     xl:text-sm 
                     lg:text-sm lg:ml-0 
                     xs:ml-4
-                    xxs:ml-4">DR. PAOLO ROVATTI</text>
+                    xxs:ml-4">DR. STEPHEN MULHOLLAND</text>
+                    <br />
+                    <br />
+                    <text class="text-teal-300 font-light 
+                    2xl:ml-16 2xl:text-xl 
+                    xl:text-sm 
+                    lg:text-sm lg:ml-0 
+                    xs:ml-4
+                    xxs:ml-4">
+                        <a href={mulhollandCV} rel="noreferrer" target="_blank">
+                            Descarga su CV
+                        </a>
+                    </text>
                 </div>
                 <div class="mt-11">
-                    <img src={sheila} class="
-                    2xl:w-40 
+                    <img src={salvatore} class="
+                    2xl:w-72
                     xl:w-32 
                     lg:w-32" alt="" />
                     <text class="text-white font-bold 
-                    2xl:-ml-5 2xl:text-base 
+                    2xl:ml-6 2xl:text-xl 
                     xl:text-sm xl:-ml-4 
-                    lg:text-sm lg:-ml-4">DRA. SHEILA NAZARIAN</text>
-                </div>
-                <div class="mt-11">
-                    <img src={alfredo} class="
-                    2xl:w-40 
-                    xl:w-32 
-                    lg:w-32" alt="" />
-                    <text class="text-white font-bold 
-                    2xl:-ml-3 2xl:text-base 
-                    xl:text-sm xl:-ml-4 
-                    lg:text-sm lg:-ml-4">DR. ALFREDO DE HOYOS</text>
-                </div>
-            </div>
-            <div class="
-            2xl:ml-36
-            sm:flex sm:items-center sm:ml-28 sm:mt-10 sm:space-x-20
-            xs:mt-10 xs:ml-[134px]
-            xxs:mt-10 xxs:ml-[127px]">
-                <div>
-                    <img src={sergio} alt="" class="
-                    2xl:w-[34] 
-                    xl:w-28 
-                    lg:w-28 lg:ml-0
-                    md:ml-12"/>
-                    <text class="text-white font-bold 
-                    2xl:text-base 
-                    xl:text-sm xl:-ml-2 
-                    lg:text-sm lg:-ml-2
-                    md:ml-12">DR. SERGIO AYUZO</text>
-                    <br></br>
-                    <text class="text-white 
-                    2xl:ml-1 2xl:text-base 
-                    xl:text-sm xl:ml-1 
-                    lg:text-sm lg:ml-1
-                    md:ml-16
+                    lg:text-sm lg:-ml-4">DR. SALVATORE PAGANO</text>
+                    <br />
+                    <br />
+                    <text class="text-teal-300 font-light 
+                    2xl:ml-20 2xl:text-xl 
+                    xl:text-sm 
+                    lg:text-sm lg:ml-0 
                     xs:ml-4
-                    xxs:ml-4">COORDINADOR</text>
-                </div>
-                <div>
-                    <img src={andres} alt="" class="
-                    2xl:w-[34] 
-                    xl:w-28 
-                    lg:w-28 lg:mt-0
-                    md:mt-0
-                    xs:mt-10
-                    xxs:mt-10"/>
-                    <text class="text-white font-bold 
-                    2xl:text-base 
-                    xl:text-sm xl:-ml-2 
-                    lg:text-sm lg:-ml-2">DR. ANDRÉS BELLO</text>
-                    <br></br>
-                    <text class="text-white 
-                    2xl:m-1 2xl:text-base 
-                    xl:text-sm xl:ml-1 
-                    lg:text-sm lg:ml-1
-                    md:ml-4
-                    xs:ml-4
-                    xxs:ml-4">COORDINADOR</text>
+                    xxs:ml-4">
+                        <a href={salvatoreCV} rel="noreferrer" target="_blank">
+                            Descarga su CV
+                        </a>
+                    </text>
                 </div>
             </div>
         </div>
