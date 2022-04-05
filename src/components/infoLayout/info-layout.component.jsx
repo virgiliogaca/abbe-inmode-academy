@@ -20,7 +20,7 @@ const InfoLayout = () => {
             <div class="
             xl:-ml-14 xl:mt-3 
             lg:-ml-6 lg:mt-8 
-            md:ml-32 md:mt-8
+            md:ml-36 md:mt-8
             xs:ml-10 xs:mt-8
             xxs:ml-8 xxs:mt-8">
                 <text class="text-white font-extralight italic 
@@ -38,16 +38,18 @@ const InfoLayout = () => {
             xxs:h-1 xxs:w-[350px] xxs:-ml-10"></div>
             <div class="
             xl:-ml-24
-            lg:-ml-10 
-            md:ml-20
-            xs:-ml-4
-            xxs:-ml-6">
+            lg:-ml-28
+            md:ml-16
+            sm:-ml-6
+            xs:-ml-5
+            xxs:-ml-5">
                 <text class="text-white font-extralight 
                 xl:text-lg 
-                lg:text-sm 
-                md:text-xl
-                xs:text-lg
-                xxs:text-lg">BALLROOM C HOTEL HYATT, CAMPOS ELÍSEOS, CDMX</text>
+                lg:text-base
+                md:text-lg
+                sm:text-sm
+                xs:text-sm
+                xxs:text-xs">BALLROOM C HOTEL HYATT, CAMPOS ELÍSEOS, CDMX</text>
             </div>
             <div class="mt-10">
                 <text class="text-white font-bold 
@@ -65,12 +67,20 @@ const InfoLayout = () => {
             xxs:ml-5 xxs:mt-10">
                 <text class="text-teal-500 font-semibold 
                 xl:text-xl 
-                lg:text-sm">10:00-17:00 HRS - PRESENTACIÓN/TALLER</text>
+                lg:text-lg
+                md:text-lg
+                sm:text-lg
+                xs:text-lg
+                xxs:text-lg">10:00-17:00 HRS - PRESENTACIÓN/TALLER</text>
                 <br />
                 <br />
                 <text class="text-teal-500 font-semibold 
                 xl:text-xl 
-                lg:text-sm">17:00-19:00 HRS - CATA DE VINO</text>
+                lg:text-lg
+                md:text-lg
+                sm:text-lg
+                xs:text-lg
+                xxs:text-lg">17:00-19:00 HRS - CATA DE VINO</text>
             </div>
             <div class="
             lg:-ml-24 lg:mt-8 
@@ -79,7 +89,10 @@ const InfoLayout = () => {
             xxs:ml-5 xxs:mt-8">
                 <text class="text-white font-light 
                 xl:text-2xl 
-                lg:text-lg">BY</text>
+                lg:text-lg
+                sm:text-lg
+                xs:text-lg
+                xxs:text-lg">BY</text>
             </div>
             <div class="
             xl:mt-8 xl:-ml-16 xl:w-[320px] 
