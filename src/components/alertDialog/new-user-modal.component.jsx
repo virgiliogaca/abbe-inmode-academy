@@ -3,158 +3,224 @@ import Instrucciones from '../../assets/instrucciones.pdf'
 
 const NewUserModal = (
     {
-        handleChange,
-        isNewUser
+        handleChange
     }
 ) => {
     return (
         <div class="bg-white
-        2xl:w-[400px] 2xl:h-[600px] 2xl:ml-[40%] 2xl:mt-[10%]
-        xl:w-[400px] xl:h-[600px] xl:ml-[36%] xl:mt-[5%]
-        lg:w-[400px] lg:h-[600px] lg:ml-[33%] lg:mt-[5%]
-        md:w-[400px] md:h-[600px] md:ml-[26%] md:mt-[18%]
-        sm:w-[400px] sm:h-[600px] sm:ml-[40%] sm:mt-[10%]
-        xs:w-[330px] xs:h-[600px] xs:ml-[10%] xs:mt-[20%]
-        xxs:w-[330px] xxs:h-[600px] xxs:ml-[8%] xxs:mt-[15%]">
+        2xl:w-[400px] 2xl:h-[800px] 2xl:ml-[40%] 2xl:mt-[6%]
+        xl:w-[400px] xl:h-[750px] xl:ml-[36%] xl:mt-0
+        lg:w-[400px] lg:h-[700px] lg:ml-[33%] lg:mt-4
+        md:w-[400px] md:h-[800px] md:ml-[26%] md:mt-[8%]
+        sm:w-[400px] sm:h-[800px] sm:ml-[40%] sm:mt-[5%]
+        xxs:w-[330px] xxs:h-[670px] xs:ml-[10%] xs:mt-24
+        xxs:ml-[7%] xxs:mt-3">
             <text class="font-bold fixed
             2xl:text-3xl 2xl:ml-24 2xl:mt-14
-            xl:text-3xl xl:ml-24 xl:mt-14
-            lg:text-3xl lg:ml-24 lg:mt-14
+            xl:text-3xl xl:ml-24 xl:mt-5
+            lg:text-3xl lg:ml-24 lg:mt-5
             md:text-3xl md:ml-24 md:mt-14
             sm:text-3xl sm:ml-24 sm:mt-14
-            xs:text-3xl xs:ml-16 xs:mt-14
-            xxs:text-3xl xxs:ml-16 xxs:mt-14">
+            xxs:text-2xl xxs:ml-20 xxs:mt-5">
                 ¡FELICIDADES!
             </text>
             <div class="fixed bg-teal-900 brightness-50 saturate-100 hue-rotate-30 rounded-lg
             2xl:w-[360px] 2xl:h-[100px] 2xl:ml-5 2xl:mt-28
-            xl:w-[360px] xl:h-[100px] xl:ml-5 xl:mt-28
-            lg:w-[360px] lg:h-[100px] lg:ml-5 lg:mt-28
+            xl:w-[360px] xl:h-[100px] xl:ml-5 xl:mt-20
+            lg:w-[360px] lg:h-[100px] lg:ml-5 lg:mt-[73px]
             md:w-[360px] md:h-[100px] md:ml-5 mdl:mt-28
             sm:w-[360px] sm:h-[100px] sm:ml-5 sm:mt-28
-            xs:w-[290px] xs:h-[100px] xs:ml-5 xs:mt-28
-            xxs:w-[290px] xxs:h-[100px] xxs:ml-5 xxs:mt-28">
+            xxs:w-[290px] xxs:h-[95px] xxs:ml-5 xxs:mt-16">
             </div>
             <text class="text-teal-400 fixed font-normal
             2xl:mt-[120px] 2xl:ml-[60px] 2xl:text-2xl
-            xl:mt-[120px] xl:ml-[60px] xl:text-2xl
-            lg:mt-[120px] lg:ml-[60px] lg:text-2xl
+            xl:mt-[85px] xl:ml-[60px] xl:text-2xl
+            lg:mt-[80px] lg:ml-[60px] lg:text-2xl
             md:mt-[120px] md:ml-[60px] md:text-2xl
             sm:mt-[120px] sm:ml-[60px] sm:text-2xl
-            xs:mt-[120px] xs:ml-[50px] xs:text-xl
-            xxs:mt-[120px] xxs:ml-[50px] xxs:text-xl">
+            xxs:mt-[70px] xxs:ml-[50px] xxs:text-xl">
                     Te has registrado con éxito
             </text>
             <br />
             <text class="text-teal-400 fixed font-normal
             2xl:mt-[120px] 2xl:ml-[70px] 2xl:text-2xl
-            xl:mt-[120px] xl:ml-[70px] xl:text-2xl
-            lg:mt-[120px] lg:ml-[70px] lg:text-2xl
+            xl:mt-[85px] xl:ml-[70px] xl:text-2xl
+            lg:mt-[80px] lg:ml-[70px] lg:text-2xl
             md:mt-[120px] md:ml-[70px] md:text-2xl
             sm:mt-[120px] sm:ml-[70px] sm:text-2xl
-            xs:mt-[120px] xs:ml-[60px] xs:text-xl
-            xxs:mt-[120px] xxs:ml-[60px] xxs:text-xl">
+            xxs:mt-[70px] xxs:ml-[60px] xxs:text-xl">
                     en el INMODE ACADEMY
             </text>
             <br />
             <text class="text-teal-400 fixed font-normal
             2xl:mt-[120px] 2xl:ml-[130px] 2xl:text-2xl
-            xl:mt-[120px] xl:ml-[130px] xl:text-2xl
-            lg:mt-[120px] lg:ml-[130px] lg:text-2xl
+            xl:mt-[85px] xl:ml-[130px] xl:text-2xl
+            lg:mt-[80px] lg:ml-[130px] lg:text-2xl
             md:mt-[120px] md:ml-[130px] md:text-2xl
             sm:mt-[120px] sm:ml-[130px] sm:text-2xl
-            xs:mt-[120px] xs:ml-[115px] xs:text-xl
-            xxs:mt-[120px] xxs:ml-[115px] xxs:text-xl">
+            xxs:mt-[70px] xxs:ml-[115px] xxs:text-xl">
                    05/05/2022
             </text>
             <div class="fixed bg-stone-300
-            2xl:w-[400px] 2xl:h-[100px] 2xl:ml-0 2xl:mt-44
-            xl:w-[400px] xl:h-[100px] xl:ml-0 xl:mt-44
-            lg:w-[400px] lg:h-[100px] lg:ml-0 lg:mt-44
-            md:w-[400px] md:h-[100px] md:ml-0 md:mt-44
-            sm:w-[400px] sm:h-[100px] sml:ml-0 sm:mt-44
-            xs:w-[330px] xs:h-[100px] xs:ml-0 xs:mt-44
-            xxs:w-[330px] xxs:h-[100px] xxs:ml-0 xxs:mt-44">
+            2xl:w-[400px] 2xl:h-[140px] 2xl:ml-0 2xl:mt-44
+            xl:w-[400px] xl:h-[150px] xl:ml-0 xl:mt-40
+            lg:w-[400px] lg:h-[140px] lg:ml-0 lg:mt-36
+            md:w-[400px] md:h-[140px] md:ml-0 md:mt-44
+            sm:w-[400px] sm:h-[140px] sml:ml-0 sm:mt-44
+            xxs:w-[330px] xxs:h-[130px] xxs:ml-0 xxs:mt-32">
             </div>
             <text class="fixed font-bold
             2xl:mt-[180px] 2xl:ml-[80px] 2xl:text-2xl
-            xl:mt-[180px] xl:ml-[80px] xl:text-2xl
-            lg:mt-[180px] lg:ml-[80px] lg:text-2xl
+            xl:mt-[170px] xl:ml-[80px] xl:text-2xl
+            lg:mt-[150px] lg:ml-[80px] lg:text-2xl
             md:mt-[180px] md:ml-[80px] md:text-2xl
             sm:mt-[180px] sm:ml-[80px] sm:text-2xl
-            xs:mt-[180px] xs:ml-[75px] xs:text-xl
-            xxs:mt-[180px] xxs:ml-[75px] xxs:text-xl">
+            xxs:mt-[130px] xxs:ml-[75px] xxs:text-xl">
                     AVISO IMPORTANTE
             </text>
             <br />
             <text class="fixed font-normal
-            2xl:mt-[180px] 2xl:ml-[10px] 2xl:text-2xl
-            xl:mt-[180px] xl:ml-[10px] xl:text-2xl
-            lg:mt-[180px] lf:ml-[10px] lg:text-2xl
-            md:mt-[180px] md:ml-[10px] md:text-2xl
-            sm:mt-[180px] sm:ml-[10px] sm:text-2xl
-            xs:mt-[180px] xs:ml-[10px] xs:text-xl
-            xxs:mt-[180px] xxs:ml-[10px] xxs:text-xl">
-                    Estás muy cerca de poder participar
+            2xl:mt-[180px] 2xl:ml-[50px] 2xl:text-2xl
+            xl:mt-[170px] xl:ml-[50px] xl:text-2xl
+            lg:mt-[150px] lf:ml-[50px] lg:text-2xl
+            md:mt-[180px] md:ml-[50px] md:text-2xl
+            sm:mt-[180px] sm:ml-[50px] sm:text-2xl
+            xxs:mt-[130px] xxs:ml-[50px] xxs:text-xl">
+                    Para poder participar en la
             </text>
             <br />
             <text class="fixed font-normal
-            2xl:mt-[190px] 2xl:ml-[30px] 2xl:text-2xl
-            xl:mt-[190px] xl:ml-[30px] xl:text-2xl
-            lg:mt-[190px] lg:ml-[30px] lg:text-2xl
-            md:mt-[190px] md:ml-[30px] md:text-2xl
-            sm:mt-[190px] sm:ml-[30px] sm:text-2xl
-            xs:mt-[190px] xs:ml-[40px] xs:text-xl
-            xxs:mt-[190px] xxs:ml-[40px] xxs:text-xl">
-                en la rifa de
+            2xl:mt-[180px] 2xl:ml-[50px] 2xl:text-2xl
+            xl:mt-[170px] xl:ml-[50px] xl:text-2xl
+            lg:mt-[150px] lg:ml-[50px] lg:text-2xl
+            md:mt-[180px] md:ml-[50px] md:text-2xl
+            sm:mt-[180px] sm:ml-[50px] sm:text-2xl
+            xxs:mt-[130px] xxs:ml-[50px] xxs:text-xl">
+                rifa de
             </text>
             <text class="fixed font-bold
-            2xl:mt-[190px] 2xl:ml-[160px] 2xl:text-2xl
-            xl:mt-[190px] xl:ml-[160px] xl:text-2xl
-            lg:mt-[190px] lg:ml-[160px] lg:text-2xl
-            md:mt-[190px] md:ml-[160px] md:text-2xl
-            sm:mt-[190px] sm:ml-[160px] sm:text-2xl
-            xs:mt-[190px] xs:ml-[150px] xs:text-xl
-            xxs:mt-[190px] xxs:ml-[150px] xxs:text-xl">
+            2xl:mt-[180px] 2xl:ml-[125px] 2xl:text-2xl
+            xl:mt-[170px] xl:ml-[125px] xl:text-2xl
+            lg:mt-[150px] lg:ml-[125px] lg:text-2xl
+            md:mt-[180px] md:ml-[125px] md:text-2xl
+            sm:mt-[180px] sm:ml-[125px] sm:text-2xl
+            xxs:mt-[130px] xxs:ml-[110px] xxs:text-xl">
                    MORPHEUS PRO
             </text>
-            <div class="fixed bg-teal-900 brightness-50 saturate-100 hue-rotate-30 rounded-3xl
-            2xl:w-[270px] 2xl:h-[50px] 2xl:ml-14 2xl:mt-60
-            xl:w-[270px] xl:h-[50px] xl:ml-14 xl:mt-60
-            lg:w-[270px] lg:h-[50px] lg:ml-14 lg:mt-60
-            md:w-[270px] md:h-[50px] md:ml-14 md:mt-60
-            sm:w-[270px] sm:h-[50px] sm:ml-14 sm:mt-60
-            xs:w-[225px] xs:h-[45px] xs:ml-14 xs:mt-60
-            xxs:w-[225px] xxs:h-[45px] xxs:ml-14 xxs:mt-60">
-            </div>
-            <text class="text-teal-400 fixed font-bold
-            2xl:mt-[245px] 2xl:ml-[73px] 2xl:text-3xl
-            xl:mt-[245px] xl:ml-[73px] xl:text-3xl
-            lg:mt-[245px] lg:ml-[73px] lg:text-3xl
-            md:mt-[245px] md:ml-[73px] md:text-3xl
-            sm:mt-[245px] sm:ml-[73px] sm:text-3xl
-            xs:mt-[245px] xs:ml-[73px] xs:text-2xl
-            xxs:mt-[245px] xxs:ml-[73px] xxs:text-2xl">
-                    PRE-APRUÉBATE
+            <text class="fixed font-normal
+            2xl:mt-[180px] 2xl:ml-[318px] 2xl:text-2xl
+            xl:mt-[170px] xl:ml-[318px] xl:text-2xl
+            lg:mt-[150px] lg:ml-[318px] lg:text-2xl
+            md:mt-[180px] md:ml-[318px] md:text-2xl
+            sm:mt-[180px] sm:ml-[318px] sm:text-2xl
+            xxs:mt-[130px] xxs:ml-[270px] xxs:text-xl">
+                es
             </text>
+            <br />
+            <text class="fixed font-normal
+            2xl:mt-[180px] 2xl:ml-[65px] 2xl:text-2xl
+            xl:mt-[170px] xl:ml-[65px] xl:text-2xl
+            lg:mt-[150px] lg:ml-[65px] lg:text-2xl
+            md:mt-[180px] md:ml-[65px] md:text-2xl
+            sm:mt-[180px] sm:ml-[65px] sm:text-2xl
+            xxs:mt-[130px] xxs:ml-[60px] xxs:text-xl">
+                necesario que mandes la
+            </text>
+            <br />
+            <text class="fixed font-normal
+            2xl:mt-[180px] 2xl:ml-[60px] 2xl:text-2xl
+            xl:mt-[170px] xl:ml-[60px] xl:text-2xl
+            lg:mt-[150px] lg:ml-[60px] lg:text-2xl
+            md:mt-[180px] md:ml-[60px] md:text-2xl
+            sm:mt-[180px] sm:ml-[60px] sm:text-2xl
+            xxs:mt-[130px] xxs:ml-[60px] xxs:text-xl">
+                siguiente documentación:
+            </text>
+            <div className='absolute 
+            2xl:mt-60 2xl:ml-24
+            xl:mt-56 xl:ml-24
+            lg:mt-48 lg:ml-24
+            md:mt-60 md:ml-24
+            sm:mt-60 sm:ml-24
+            xxs:mt-44 xxs:ml-16'>
+                <ul className='list-disc text-teal-400'>
+                    <li className=''>
+                        <text className='text-black font-bold
+                        sm:text-lg
+                        xxs:text-base'>INE</text>
+                    </li>
+                    <li>
+                        <text className='text-black font-bold
+                        sm:text-lg
+                        xxs:text-base'>Los últimos 3 estados de cuenta</text>
+                    </li>
+                    <li>
+                        <text className='text-black font-bold
+                        sm:text-lg
+                        xxs:text-base'>Constancia de situación fiscal</text>
+                    </li>
+                    <li>
+                        <text className='text-black font-bold
+                        sm:text-lg
+                        xxs:text-base'>Comprobante de domicilio</text>
+                    </li>
+                </ul>
+            </div>
+            <text className='font-bold sm:text-2xl fixed
+            2xl:mt-[360px]
+            xl:mt-[340px] xl:ml-36
+            lg:mt-[310px] lg:ml-36
+            md:mt-[360px] md:ml-36
+            sm:mt-[360px] sm:ml-36
+            xxs:mt-[280px] xxs:ml-28 xxs:text-xl'>Al correo</text>
+            <div class="fixed bg-stone-300
+            2xl:w-[400px] 2xl:h-[40px] 2xl:ml-0 2xl:mt-[398px]
+            xl:w-[400px] xl:h-[40px] xl:ml-0 xl:mt-[375px]
+            lg:w-[400px] lg:h-[40px] lg:ml-0 lg:mt-[345px]
+            md:w-[400px] md:h-[40px] md:ml-0 md:mt-[398px]
+            sm:w-[400px] sm:h-[40px] sml:ml-0 sm:mt-[398px]
+            xxs:w-[330px] xxs:h-[30px] xxs:ml-0 xxs:mt-[310px]">
+            </div>
             <text class="text-blue-700 fixed font-bold
-            2xl:mt-[325px] 2xl:ml-[35px] 2xl:text-2xl
-            xl:mt-[325px] xl:ml-[35px] xl:text-2xl
-            lg:mt-[325px] lg:ml-[35px] lg:text-2xl
-            md:mt-[325px] md:ml-[35px] md:text-2xl
-            sm:mt-[325px] sm:ml-[35px] sm:text-2xl
-            xs:mt-[325px] xs:ml-[35px] xs:text-xl
-            xxs:mt-[325px] xxs:ml-[35px] xxs:text-xl">
-                    <a href={Instrucciones} target="_blank" rel="noreferrer">Descarga los requisitos aquí</a>
+            2xl:mt-[400px] 2xl:ml-[70px] 2xl:text-2xl
+            xl:mt-[377px] xl:ml-[70px] xl:text-2xl
+            lg:mt-[347px] lg:ml-[70px] lg:text-2xl
+            md:mt-[400px] md:ml-[70px] md:text-2xl
+            sm:mt-[400px] sm:ml-[70px] sm:text-2xl
+            xxs:mt-[310px] xxs:ml-[55px] xxs:text-xl">
+                    <a href="mailto:abravo@abbe.com.mx" target="_blank" rel="noreferrer">abravo@abbe.com.mx</a>
+            </text>
+            <text className='font-bold sm:text-2xl fixed
+            2xl:mt-[450px] 2xl:ml-28
+            xl:mt-[420px] xl:ml-28
+            lg:mt-[385px] lg:ml-28
+            md:mt-[450px] md:ml-28
+            sm:mt-[450px] sm:ml-28
+            xxs:mt-[340px] xxs:ml-24 xxs:text-xl'>O al Whatsapp</text>
+            <div class="fixed bg-stone-300
+            2xl:w-[400px] 2xl:h-[40px] 2xl:ml-0 2xl:mt-[490px]
+            xl:w-[400px] xl:h-[40px] xl:ml-0 xl:mt-[455px]
+            lg:w-[400px] lg:h-[40px] lg:ml-0 lg:mt-[420px]
+            md:w-[400px] md:h-[40px] md:ml-0 md:mt-[490px]
+            sm:w-[400px] sm:h-[40px] sml:ml-0 sm:mt-[490px]
+            xxs:w-[330px] xxs:h-[30px] xxs:ml-0 xxs:mt-[370px]">
+            </div>
+            <text class="text-blue-700 fixed font-bold
+            2xl:mt-[493px] 2xl:ml-[120px] 2xl:text-2xl
+            xl:mt-[459px] xl:ml-[120px] xl:text-2xl
+            lg:mt-[425px] lg:ml-[120px] lg:text-2xl
+            md:mt-[493px] md:ml-[120px] md:text-2xl
+            sm:mt-[493px] sm:ml-[120px] sm:text-2xl
+            xxs:mt-[370px] xxs:ml-[100px] xxs:text-xl">
+                    <a href="https://wa.me/525539262213?text=Quiero20%participar20%en20%la20%rifa20%de20%morpheus20%pro" target="_blank" rel="noreferrer">55 3926 2213</a>
             </text>
             <div class="
-            2xl:mt-[400px] 2xl:ml-[90px]
-            xl:mt-[400px] xl:ml-[90px]
-            lg:mt-[400px] lg:ml-[90px]
-            md:mt-[400px] md:ml-[90px]
-            sm:mt-[400px] sm:ml-[90px]
-            xs:mt-[400px] xs:ml-[70px]
-            xxs:mt-[400px] xxs:ml-[70px]">
+            2xl:mt-[560px] 2xl:ml-[100px]
+            xl:mt-[515px] xl:ml-[100px]
+            lg:mt-[480px] lg:ml-[100px]
+            md:mt-[560px] md:ml-[100px]
+            sm:mt-[480px] sm:ml-[100px]
+            xxs:mt-[430px] xxs:ml-[65px]">
                 <Button className='shadow-2xl shadow-gray-900' variant="contained" style={{width: '200px', height: '60px', borderRadius: "25px", backgroundColor: "rgb(45 212 191)", fontSize: "20px"}} sx={{boxShadow: 3}}
                 onClick={() => handleChange()}>
                     Finalizar

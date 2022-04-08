@@ -9,17 +9,17 @@ import {FormLayout} from "./components/formLayout"
 function App() {
   return (
     <div class="bg-layout-image bg-center bg-cover 
-    2xl:h-[2250px] 
-    xl:h-[2250px] 
-    lg:h-[2200px] 
-    md:h-[3200px]
-    sm:h-[3000px]
-    xs:h-[3500px]
-    xxs:h-[3450px]">
+    2xl:h-[2350px] 
+    xl:h-[2350px] 
+    lg:h-[2300px] 
+    md:h-[3300px]
+    sm:h-[3100px]
+    xs:h-[4200px] 
+    xxs:h-[4550px] xxs:w-full">
       <div class="absolute 
       2xl:ml-[38%] 2xl:mt-10 2xl:w-[600px] 
       xl:w-[500px] xl:ml-[33%] xl:mt-5 
-      lg:w-[480px] lg:ml-[31%] lg:mt-12
+      lg:w-[480px] lg:ml-[29%] lg:mt-12
       md:w-[500px] md:ml-[23%] md:mt-10
       sm:ml-[18%] sm:mt-10 sm:w-[450px]
       xs:ml-[5%] xs:mt-10 xs:w-[350px]
@@ -62,23 +62,22 @@ function App() {
         xs:text-lg
         xxs:text-lg">CDMX</text>
       </div>
-      <div class="absolute 
+      <div class="absolute z-10
       2xl:ml-[34.5%] 2xl:mt-72 
       xl:mt-72 xl:ml-[32.5%] 
-      lg:mt-72 lg:ml-[28%] 
-      md:mt-72 md:ml-[16%]
+      lg:mt-72 lg:ml-[20%] 
+      md:mt-72 md:ml-[9%]
       xs:mt-60 xs:-ml-16
       xxs:mt-52 xxs:-ml-16">
         <ProffessorLayout/>
       </div>
-      <div class="absolute 
-      2xl:ml-[24%] 2xl:mt-[750px] 
-      xl:mt-[780px] xl:ml-[15%] 
-      lg:mt-[700px] lg:ml-[8%] 
-      md:mt-[750px]
-      sm:mt-[700px]
-      xs:mt-[1200px]
-      xxs:mt-[1200px]">
+      <div class="absolute left-1/2 transform -translate-x-1/2
+      2xl:mt-[670px]
+      xl:mt-[700px]
+      lg:mt-[625px] lg:ml-0
+      md:mt-[680px] md:-ml-10
+      xs:mt-[1100px] xs:-ml-1
+      xxs:mt-[1100px] xxs:-ml-1">
         <MorpheusBanner/>
       </div>
       <div class="absolute 
@@ -87,8 +86,8 @@ function App() {
       lg:mt-[1100px] lg:ml-[24%] 
       md:mt-[2450px] md:ml-[15%] 
       sm:mt-[2300px] sm:ml-[30%]
-      xs:mt-[2750px] xs:ml-[16%]
-      xxs:mt-[2700px] xxs:ml-[14%]">
+      xs:mt-[3350px] xs:ml-[16%]
+      xxs:mt-[3350px] xxs:ml-[14%]">
         <InfoLayout/>
       </div>
       <div class="absolute 
@@ -97,8 +96,8 @@ function App() {
       lg:mt-[1100px] lg:ml-[60%] 
       md:mt-[1150px] md:ml-[15%]
       sm:mt-[1020px] sm:ml-[15%] 
-      xs:mt-[1480px] xs:ml-[5%]
-      xxs:mt-[1480px] xxs:ml-[5%]">
+      xs:mt-[2050px] xs:ml-[5%]
+      xxs:mt-[2050px] xxs:ml-[5%]">
         <FormLayout/>
       </div>
     </div>

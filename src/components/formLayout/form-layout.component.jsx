@@ -2,19 +2,24 @@ import * as React from 'react';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import { TextField } from "@mui/material";
-import Switch from '@mui/material/Switch';
 import Modal from '@mui/material/Modal';
 import {sendUserInfo} from '../../api/googleSheets/index'
 import { PreApprovedModal, NewUserModal } from '../alertDialog';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Radio from '@mui/material/Radio';
+import Instrucciones from '../../assets/instrucciones.pdf'
 
 const FormLayout = () => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [entity, setEntity] = useState('');
-    const [inmodeClient, setInmodeClient] = useState(false);
-    const [preApproved, setPreApproved] = useState(false);
+    const [isAbbeClient, setIsAbbeClient] = useState('No Soy Cliente Abbe');
     const [open, setOpen] = React.useState(false);
+    const [equipment, setEquipment] = React.useState('');
     
     const handleOpen = () => 
     {
@@ -22,8 +27,7 @@ const FormLayout = () => {
     }
     const handleClose = () => {
         setOpen(false);
-        setInmodeClient(false);
-        setPreApproved(false);
+        setIsAbbeClient('No Soy Cliente Abbe');
     }
 
     const handleName = (event) => {
@@ -38,29 +42,30 @@ const FormLayout = () => {
     const handleEntity = (event) => {
         setEntity(event.target.value);
       };
-    const handleInmodeSwitch = () => {
-        setInmodeClient(!inmodeClient);
+    const handleRadioButton = (event) => {
+        setIsAbbeClient(event.target.value);
     };
-    const handlePreApprovedSwitch = () => {
-        setPreApproved(!preApproved);
+    const handleEquipment = (event) => {
+        setEquipment(event.target.value);
     };
 
     const saveForm = () => {
-        sendUserInfo(name, phone, email, entity, inmodeClient, preApproved)
+        sendUserInfo(name, phone, email, entity, equipment, isAbbeClient)
         handleOpen()
         setEmail('');
         setEntity('');
         setName('');
         setPhone('');
+        setEquipment('');
     };
 
     return (
         <>
             <div class="bg-teal-400 
             xl:w-44 xl:h-10 xl:ml-5 
-            lg:w-36 lg:h-9 
+            lg:w-36 lg:h-9 lg:ml-24
             md:w-[550px] md:h-10
-            sm:ml-24
+            sm:ml-8
             xs:w-[290px] xs:h-10 xs:ml-9
             xxs:w-[290px] xxs:h-10 xxs:ml-9">
                 <text class="text-white font-semibold 
@@ -138,6 +143,52 @@ const FormLayout = () => {
             </div>
             <div>
                 <div class="
+                xl:mt-10 xl:-ml-28
+                lg:mt-8 lg:-ml-24 
+                md:mt-8 md:ml-20
+                xs:mt-12 xs:-ml-1
+                xxs:mt-12 xxs:-ml-3">
+                    <text class="text-white font-light ml-2
+                    xl:text-lg
+                    lg:text-base">EQUIPO</text>
+                    <br />
+                    <text class="text-white font-light 
+                    xl:text-lg 
+                    lg:text-base">DE INTERÉS</text>
+                    <text class="text-red-600 font-light 
+                    xl:text-lg 
+                    lg:text-base">*</text>
+                </div>
+                <div class="
+                xl:-mt-16 xl:-ml-2
+                lg:-mt-16 lg:-ml-2
+                md:ml-[184px] md:-mt-14
+                xs:ml-[85px] xs:-mt-14
+                xxs:ml-[72px] xxs:-mt-14">
+                    <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+                        <InputLabel id="demo-simple-select-filled-label">Equipo de Interés</InputLabel>
+                        <Select
+                        labelId="demo-simple-select-filled-label"
+                        id="demo-simple-select-filled"
+                        value={equipment}
+                        style={{backgroundColor: 'white', width: '250px'}}
+                        onChange={handleEquipment}
+                        >
+                            <MenuItem value="">
+                                <em></em>
+                            </MenuItem>
+                            <MenuItem value={'Morpheus PRO'}>Morpheus PRO</MenuItem>
+                            <MenuItem value={'BodyTite'}>BodyTite</MenuItem>
+                            <MenuItem value={'Optimas'}>Optimas</MenuItem>
+                            <MenuItem value={'Contoura'}>Contoura</MenuItem>
+                            <MenuItem value={'Triton'}>Triton</MenuItem>
+                            <MenuItem value={'Evolve X'}>Evolve X</MenuItem>
+                        </Select>
+                    </FormControl>
+                </div>
+            </div>
+            <div>
+                <div class="
                 xl:mt-10 xl:-ml-24
                 lg:mt-8 lg:-ml-24 
                 md:mt-10 md:ml-24
@@ -171,7 +222,7 @@ const FormLayout = () => {
             md:w-[380px] md:h-44 md:ml-32 md:mt-14
             sm:w-[380px] sm:h-44 sm:ml-14 sm:mt-10
             xs:w-[360px] xs:h-44 xs:ml-0 xs:mt-10
-            xxs:w-[350px] xxs:h-44 xxs:ml-0 xxs:mt-10">
+            xxs:w-[330px] xxs:h-44 xxs:ml-0 xxs:mt-10">
                 <div class="bg-white shadow-lg shadow-gray-500 z-10 rounded-2xl
                 xl:ml-7 xl:-mt-5 xl:w-[250px] xl:h-7
                 lg:ml-4 lg:-mt-5 lg:w-[170px] lg:h-7
@@ -200,14 +251,20 @@ const FormLayout = () => {
                     lg:ml-2 
                     md:ml-2
                     xs:ml-2
-                    xxs:ml-2">SOY CLIENTE INMODE**</text>
+                    xxs:ml-2">NO SOY CLIENTE ABBE</text>
                     <div class="
                     xl:-mt-8 xl:ml-72
                     lg:-mt-8 lg:ml-72
                     md:-mt-8 md:ml-72
                     xs:-mt-8 xs:ml-64
                     xxs:-mt-8 xxs:ml-64">
-                    <Switch color="default" checked={inmodeClient} onChange={handleInmodeSwitch}></Switch>
+                    <Radio
+                        checked={isAbbeClient === 'No Soy Cliente Abbe'}
+                        onChange={handleRadioButton}
+                        value="No Soy Cliente Abbe"
+                        name="radio-buttons"
+                        inputProps={{ 'aria-label': 'No Soy Cliente Abbe' }}
+                    />
                     </div>
                     <br />
                     <text class="text-black font-semibold text-lg 
@@ -216,52 +273,29 @@ const FormLayout = () => {
                     md:ml-10
                     xs:ml-10
                     xxs:ml-10">SOY CLIENTE ABBE</text>
-                    <br />
-                    <text class="text-black font-semibold text-lg 
-                    xl:ml-2 
-                    lg:ml-2 
-                    md:ml-2
-                    xs:ml-2
-                    xxs:ml-2">O ESTOY PRE-APROBADO**</text>
                     <div class="
-                    xl:-mt-12 xl:ml-72
-                    lg:-mt-12 lg:ml-72
-                    md:-mt-12 md:ml-72
-                    xs:-mt-12 xs:ml-64
-                    xxs:-mt-12 xxs:ml-64">
-                    <Switch color="default" checked={preApproved} onChange={handlePreApprovedSwitch}></Switch>
+                    xl:-mt-9 xl:ml-72
+                    lg:-mt-9 lg:ml-72
+                    md:-mt-9 md:ml-72
+                    xs:-mt-9 xs:ml-64
+                    xxs:-mt-9 xxs:ml-64">
+                    <Radio
+                        checked={isAbbeClient === 'Soy Cliente Abbe'}
+                        onChange={handleRadioButton}
+                        value="Soy Cliente Abbe"
+                        name="radio-buttons"
+                        inputProps={{ 'aria-label': 'Soy Cliente Abbe' }}
+                    />
                     </div>
                 </div>
             </div>
-            <div class="xl:mt-60
-            lg:mt-60 lg:ml-9
-            md:mt-60 md:ml-48
-            sm:mt-64 sm:ml-32
-            xs:mt-64 xs:ml-28
-            xxs:mt-64 xxs:ml-28">
-                <text class="text-white font-semibold text-xl 
-                        xl:-ml-16
-                        lg:-ml-16
-                        md:-ml-16
-                        xs:-ml-16
-                        xxs:-ml-16">**Toda la información será comprobada
-                </text>
-                        <br />
-                <text class="text-white font-semibold text-xl 
-                        xl:ml-2 
-                        lg:ml-2 
-                        md:ml-2
-                        xs:-ml-9
-                        xxs:-ml-9">al momento de la rifa.
-                </text>
-            </div>
             <div class="bg-white rounded-lg absolute 
-            xl:w-[415px] xl:h-40 xl:-ml-20 xl:mt-10
-            lg:w-[380px] lg:h-48 lg:-ml-10 lg:mt-10
-            md:w-[420px] md:h-52 md:ml-28 md:mt-16
-            sm:w-[420px] sm:h-48 sm:ml-10 sm:mt-10
-            xs:w-[380px] xs:h-48 xs:-ml-2 xs:mt-10
-            xxs:w-[350px] xxs:h-44 xxs:ml-0 xxs:mt-10">
+            xl:w-[415px] xl:h-60 xl:-ml-20 xl:mt-64
+            lg:w-[380px] lg:h-60 lg:-ml-10 lg:mt-64
+            md:w-[420px] md:h-60 md:ml-28 md:mt-72
+            sm:w-[420px] sm:h-48 sm:ml-10 sm:mt-64
+            xs:w-[380px] xs:h-60 xs:-ml-2 xs:mt-64
+            xxs:w-[320px] xxs:h-48 xxs:ml-0 xxs:mt-72">
                 <div class="
                 xl:ml-4 xl:-mt-3
                 lg:ml-4 
@@ -275,51 +309,65 @@ const FormLayout = () => {
                     lg:text-lg lg:ml-28
                     md:text-xl md:ml-32
                     xs:text-xl xs:ml-32
-                    xxs:text-lg xxs:ml-28">IMPORTANTE:</text>
+                    xxs:text-base xxs:ml-28">IMPORTANTE:</text>
                     <br />
                     <text class="text-black font-semibold 2xl:text-xl
                     xl:text-xl xl:ml-3
                     lg:text-lg lg:ml-3
                     md:text-xl md:ml-3
                     xs:text-xl xs:ml-3
-                    xxs:text-lg xxs:ml-3">¡En caso de no ser cliente de Inmode o</text>
+                    xxs:text-base xxs:ml-3">¡En caso de no ser cliente de Abbe, aún</text>
                     <br />
                     <text class="text-black font-semibold 2xl:text-xl 
-                    xl:text-xl xl:ml-4
-                    lg:text-lg lg:ml-4
-                    md:text-xl md:ml-4
-                    xs:text-xl xs:ml-4
-                    xxs:text-lg xxs:ml-4">cliente de Abbe aún puedes participar</text>
+                    xl:text-xl xl:ml-8
+                    lg:text-lg lg:ml-8
+                    md:text-xl md:ml-8
+                    xs:text-xl xs:ml-8
+                    xxs:text-base xxs:ml-6">podrás participar en la rifa enviando</text>
                     <br />
                     <text class="text-black font-semibold 2xl:text-xl
-                    xl:text-xl xl:ml-36
-                    lg:text-lg lg:ml-36
-                    md:text-xl md:ml-36
-                    xs:text-xl xs:ml-36
-                    xxs:text-lg xxs:ml-32">en la rifa!</text>
+                    xl:text-xl xl:ml-16
+                    lg:text-lg lg:ml-16
+                    md:text-xl md:ml-16
+                    xs:text-xl xs:ml-16
+                    xxs:text-base xxs:ml-14">la documentación requerida!</text>
                     <br />
                     <text class="text-black font-light 2xl:text-xl 
-                    xl:text-xl xl:ml-7
-                    lg:text-lg lg:ml-7
-                    md:text-xl md:ml-7
-                    xs:text-xl xs:ml-7
-                    xxs:text-lg xxs:ml-7">Más información</text>
-                    <text class="text-black font-light underline 2xl:text-xl
+                    xl:text-xl xl:ml-28
+                    lg:text-lg lg:ml-24
+                    md:text-xl md:ml-28
+                    xs:text-xl xs:ml-28
+                    xxs:text-base xxs:ml-24">Más información</text>
+                    <text class="text-blue-400 font-light underline 2xl:text-xl
                     xl:text-xl xl:ml-1
                     lg:text-lg lg:ml-1
                     md:text-xl md:ml-1
                     xs:text-xl xs:ml-1
-                    xxs:text-lg xxs:ml-1">al finalizar tu registro.</text>
+                    xxs:text-base xxs:ml-1"><a href={Instrucciones} target="_blank" rel="noreferrer">aquí</a></text>
                     <br />
+                    <text class="text-black font-bold 
+                    2xl:text-3xl 2xl:ml-32 
+                    xl:text-2xl xl:ml-40
+                    lg:text-xl lg:ml-36
+                    md:text-xl md:ml-40
+                    xs:text-xl xs:ml-40
+                    xxs:text-base xxs:ml-32">¿Dudas?</text>
+                    <br />
+                    <text class="text-black font-light 2xl:text-2xl 2xl:ml-16 
+                    xl:text-xl xl:ml-24
+                    lg:text-lg lg:ml-20
+                    md:text-xl md:ml-24
+                    xs:text-xl xs:ml-24
+                    xxs:text-base xxs:ml-20">Whatsapp: 33 2258 9978</text>
                 </div>
             </div>
             <div class="
-            xl:mt-[250px] xl:ml-8 
-            lg:mt-[280px] lg:ml-10 
-            md:mt-[400px] md:ml-48
-            sm:mt-[350px] sm:ml-36
-            xs:mt-[350px] xs:ml-20
-            xxs:mt-[300px] xxs:ml-16">
+            xl:mt-[550px] xl:ml-8
+            lg:mt-[580px] lg:ml-10 
+            md:mt-[650px] md:ml-48
+            sm:mt-[650px] sm:ml-36
+            xs:mt-[600px] xs:ml-20
+            xxs:mt-[550px] xxs:ml-16">
                 <Button variant="contained" style={{width: '200px', height: '60px', borderRadius: "25px", backgroundColor: "rgb(45 212 191)", fontSize: "20px"}} disabled={!name || !phone || !email}
                 onClick={() => saveForm()}>
                     ENVIAR
@@ -329,8 +377,8 @@ const FormLayout = () => {
                     onClose={handleClose}
                 >
                     {
-                        (!inmodeClient && !preApproved) ?
-                        <NewUserModal handleChange={handleClose}/>:
+                        (isAbbeClient === 'No Soy Cliente Abbe') ?
+                        <NewUserModal handleChange={handleClose}/> :
                         <PreApprovedModal handleChange={handleClose}/>
                     }
                 </Modal>
