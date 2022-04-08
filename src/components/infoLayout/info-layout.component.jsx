@@ -71,7 +71,7 @@ const InfoLayout = () => {
                 md:text-lg
                 sm:text-lg
                 xs:text-lg
-                xxs:text-lg">10:00-17:00 HRS - PRESENTACIÓN/TALLER</text>
+                xxs:text-lg">10:20-12:30 Curso Avanzado de Morpheus8</text>
                 <br />
                 <br />
                 <text class="text-teal-500 font-semibold 
@@ -80,7 +80,25 @@ const InfoLayout = () => {
                 md:text-lg
                 sm:text-lg
                 xs:text-lg
-                xxs:text-lg">17:00-19:00 HRS - CATA DE VINO</text>
+                xxs:text-lg">12:45-14:00 Nuevos Avances en Tecnología Inmode</text>
+                <br />
+                <br />
+                <text class="text-teal-500 font-semibold 
+                xl:text-xl 
+                lg:text-lg
+                md:text-lg
+                sm:text-lg
+                xs:text-lg
+                xxs:text-lg">14:30-17:00 Nuevos Avances en Tecnología Inmode II</text>
+                <br />
+                <br />
+                <text class="text-teal-500 font-semibold 
+                xl:text-xl 
+                lg:text-lg
+                md:text-lg
+                sm:text-lg
+                xs:text-lg
+                xxs:text-lg">17:00-19:00 Cata de Vino y Rifa Morpheus</text>
             </div>
             <div class="
             lg:-ml-24 lg:mt-8 
