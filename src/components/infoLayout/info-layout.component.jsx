@@ -71,6 +71,15 @@ const InfoLayout = () => {
                 md:text-lg
                 sm:text-lg
                 xs:text-lg
+                xxs:text-lg">10:00 Presentación Inicial Dr. Mulholland y Dr. Pagano</text>
+                <br />
+                <br />
+                <text class="text-teal-500 font-semibold 
+                xl:text-xl 
+                lg:text-lg
+                md:text-lg
+                sm:text-lg
+                xs:text-lg
                 xxs:text-lg">10:20-12:30 Curso Avanzado de Morpheus8</text>
                 <br />
                 <br />
