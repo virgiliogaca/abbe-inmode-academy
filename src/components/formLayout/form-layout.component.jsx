@@ -174,7 +174,7 @@ const FormLayout = () => {
                         style={{backgroundColor: 'white', width: '250px'}}
                         onChange={handleEquipment}
                         >
-                            <MenuItem value="">
+                            <MenuItem value=''>
                                 <em></em>
                             </MenuItem>
                             <MenuItem value={'Morpheus PRO'}>Morpheus PRO</MenuItem>
@@ -368,7 +368,7 @@ const FormLayout = () => {
             sm:mt-[650px] sm:ml-36
             xs:mt-[600px] xs:ml-20
             xxs:mt-[550px] xxs:ml-16">
-                <Button variant="contained" style={{width: '200px', height: '60px', borderRadius: "25px", backgroundColor: "rgb(45 212 191)", fontSize: "20px"}} disabled={!name || !phone || !email}
+                <Button variant="contained" style={{width: '200px', height: '60px', borderRadius: "25px", backgroundColor: "rgb(45 212 191)", fontSize: "20px"}} disabled={!name || !phone || !email || equipment === ''}
                 onClick={() => saveForm()}>
                     ENVIAR
                 </Button>
