@@ -11,15 +11,19 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Radio from '@mui/material/Radio';
 import Instrucciones from '../../assets/instrucciones.pdf'
+import Switch from '@mui/material/Switch';
+import InputMask from "react-input-mask";
 
 const FormLayout = () => {
     const [name, setName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
-    const [entity, setEntity] = useState('');
+    const [entity, setEntity] = React.useState('');
     const [isAbbeClient, setIsAbbeClient] = useState('No Soy Cliente Abbe');
     const [open, setOpen] = React.useState(false);
     const [equipment, setEquipment] = React.useState('');
+    const [isEmailError, setEmailError] = useState(true)
     
     const handleOpen = () => 
     {
@@ -33,10 +37,14 @@ const FormLayout = () => {
     const handleName = (event) => {
         setName(event.target.value);
       };
+    const handleLastName = (event) => {
+        setLastName(event.target.value);
+      };
     const handlePhone = (event) => {
         setPhone(event.target.value);
       };
     const handleEmail = (event) => {
+        setEmailError(!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(event.target.value)))
         setEmail(event.target.value);
       };
     const handleEntity = (event) => {
@@ -47,6 +55,10 @@ const FormLayout = () => {
     };
     const handleEquipment = (event) => {
         setEquipment(event.target.value);
+    };
+
+    const handleEmailError = (event) => {
+        
     };
 
     const saveForm = () => {
@@ -61,14 +73,14 @@ const FormLayout = () => {
 
     return (
         <>
-            <div class="bg-teal-400 
+            <div class="bg-[#1c0d44] rounded-full
             xl:w-44 xl:h-10 xl:ml-5 
             lg:w-36 lg:h-9 lg:ml-24
             md:w-[550px] md:h-10
             sm:ml-8
             xs:w-[290px] xs:h-10 xs:ml-9
             xxs:w-[290px] xxs:h-10 xxs:ml-9">
-                <text class="text-white font-semibold 
+                <text class="text-white font-light italic 
                 xl:text-3xl xl:ml-5 
                 lg:text-2xl lg:ml-4 
                 md:text-3xl md:ml-[200px]
@@ -85,7 +97,7 @@ const FormLayout = () => {
                     <text class="text-white font-light 
                     xl:text-lg 
                     lg:text-base">NOMBRE</text>
-                    <text class="text-red-600 font-light 
+                    <text class="text-white font-light 
                     xl:text-lg 
                     lg:text-base">*</text>
                 </div>
@@ -100,13 +112,17 @@ const FormLayout = () => {
             </div>
             <div>
                 <div class="
-                xl:mt-10 xl:-ml-28 
-                lg:mt-8 lg:-ml-28 
+                xl:mt-10 xl:-ml-24 
+                lg:mt-8 lg:-ml-24 
                 md:mt-10 md:ml-24
-                xs:mt-12 xs:-ml-2
-                xxs:mt-12 xxs:-ml-4">
-                    <text class="text-white font-light xl:text-lg lg:text-base">WHATSAPP</text>
-                    <text class="text-red-600 font-light xl:text-lg lg:text-base">*</text>
+                xs:mt-12 xs:ml-2
+                xxs:mt-12 xxs:ml-0">
+                    <text class="text-white font-light 
+                    xl:text-lg 
+                    lg:text-base">APELLIDO</text>
+                    <text class="text-white font-light 
+                    xl:text-lg 
+                    lg:text-base">*</text>
                 </div>
                 <div class="
                 xl:-mt-12 
@@ -114,7 +130,34 @@ const FormLayout = () => {
                 md:ml-48 md:-mt-10
                 xs:ml-24 xs:-mt-10
                 xxs:ml-20 xxs:-mt-10">
-                    <TextField id="filled-basic" label="WhatsApp" style={{backgroundColor: 'white', width: '250px'}} color="primary" variant="filled" onChange={handlePhone} value={phone}/>
+                    <TextField id="filled-basic" label="Apellido" style={{backgroundColor: 'white', width: '250px'}} color="primary" variant="filled" onChange={handleLastName} value={lastName}/>
+                </div>
+            </div>
+            <div>
+                <div class="
+                xl:mt-10 xl:-ml-28 
+                lg:mt-8 lg:-ml-28 
+                md:mt-10 md:ml-24
+                xs:mt-12 xs:-ml-2
+                xxs:mt-12 xxs:-ml-4">
+                    <text class="text-white font-light xl:text-lg lg:text-base">WHATSAPP</text>
+                    <text class="text-white font-light xl:text-lg lg:text-base">*</text>
+                </div>
+                <div class="
+                xl:-mt-12 
+                lg:-mt-10 lg:ml-0 
+                md:ml-48 md:-mt-10
+                xs:ml-24 xs:-mt-10
+                xxs:ml-20 xxs:-mt-10">
+                    <InputMask
+                        mask="(52)999 999 99 99"
+                        value={phone}
+                        disabled={false}
+                        onChange={handlePhone}
+                        maskChar=" "
+                        style={{height: '50px', width: '250px'}}
+                        >
+                    </InputMask>
                 </div>
             </div>
             <div>
@@ -128,7 +171,7 @@ const FormLayout = () => {
                     <text class="text-white font-light 
                     xl:text-lg 
                     lg:text-base">CORREO</text>
-                    <text class="text-red-600 font-light 
+                    <text class="text-white font-light 
                     xl:text-lg 
                     lg:text-base">*</text>
                 </div>
@@ -138,12 +181,12 @@ const FormLayout = () => {
                 md:ml-48 md:-mt-10
                 xs:ml-24 xs:-mt-10
                 xxs:ml-20 xxs:-mt-10">
-                    <TextField id="filled-basic" label="Correo" style={{backgroundColor: 'white', width: '250px'}} color="primary" variant="filled" onChange={handleEmail} value={email}/>
+                    <TextField id="filled-basic" label="Correo" error={isEmailError} style={{backgroundColor: 'white', width: '250px'}} color="primary" variant="filled" onChange={handleEmail} value={email}/>
                 </div>
             </div>
             <div>
                 <div class="
-                xl:mt-10 xl:-ml-28
+                xl:mt-5 xl:-ml-28
                 lg:mt-8 lg:-ml-24 
                 md:mt-8 md:ml-20
                 xs:mt-12 xs:-ml-1
@@ -155,7 +198,7 @@ const FormLayout = () => {
                     <text class="text-white font-light 
                     xl:text-lg 
                     lg:text-base">DE INTERÉS</text>
-                    <text class="text-red-600 font-light 
+                    <text class="text-white font-light 
                     xl:text-lg 
                     lg:text-base">*</text>
                 </div>
@@ -177,12 +220,16 @@ const FormLayout = () => {
                             <MenuItem value=''>
                                 <em></em>
                             </MenuItem>
-                            <MenuItem value={'Morpheus PRO'}>Morpheus PRO</MenuItem>
-                            <MenuItem value={'BodyTite'}>BodyTite</MenuItem>
-                            <MenuItem value={'Optimas'}>Optimas</MenuItem>
-                            <MenuItem value={'Contoura'}>Contoura</MenuItem>
-                            <MenuItem value={'Triton'}>Triton</MenuItem>
-                            <MenuItem value={'Evolve X'}>Evolve X</MenuItem>
+                            <MenuItem value={'SMARTXIDE PUNTO'}>SMARTXIDE PUNTO</MenuItem>
+                            <MenuItem value={'LUXEA'}>LUXEA</MenuItem>
+                            <MenuItem value={'MOTUS AX'}>MOTUS AX</MenuItem>
+                            <MenuItem value={'MOTUS AY'}>MOTUS AY</MenuItem>
+                            <MenuItem value={'ONDA PLUS'}>ONDA PLUS</MenuItem>
+                            <MenuItem value={'SMARTXIDE TOUCH'}>SMARTXIDE TOUCH</MenuItem>
+                            <MenuItem value={'VASQ COLORANTE PULSADO'}>VASQ COLORANTE PULSADO</MenuItem>
+                            <MenuItem value={'DUO GLIDE'}>DUO GLIDE</MenuItem>
+                            <MenuItem value={'SMART PICO'}>SMART PICO</MenuItem>
+                            <MenuItem value={'EXIPLEX'}>EXIPLEX</MenuItem>
                         </Select>
                     </FormControl>
                 </div>
@@ -194,27 +241,72 @@ const FormLayout = () => {
                 md:mt-10 md:ml-24
                 xs:mt-12 xs:ml-4
                 xxs:mt-12 xxs:ml-1">
-                    <text class="text-white font-light 
+                    <text class="text-white font-light
                     xl:text-lg 
-                    lg:text-base">ESTADO</text>
+                    lg:text-base">ESTADO*</text>
                 </div>
                 <div class="
-                xl:-mt-12 
-                lg:-mt-10 
-                lg:ml-0 
-                md:ml-48 md:-mt-10
-                xs:ml-24 xs:-mt-10
-                xxs:ml-20 xxs:-mt-10">
-                    <TextField id="filled-basic" label="Estado" style={{backgroundColor: 'white', width: '250px'}} color="primary" variant="filled" onChange={handleEntity} value={entity}/>
+                xl:-mt-16 xl:-ml-2
+                lg:-mt-16 lg:-ml-2
+                md:ml-[184px] md:-mt-14
+                xs:ml-[85px] xs:-mt-14
+                xxs:ml-[72px] xxs:-mt-14">
+                    <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+                        <InputLabel id="demo-simple-select-filled-label">Estado</InputLabel>
+                        <Select
+                        labelId="demo-simple-select-filled-label"
+                        id="demo-simple-select-filled"
+                        value={entity}
+                        style={{backgroundColor: 'white', width: '250px'}}
+                        onChange={handleEntity}
+                        >
+                            <MenuItem value=''>
+                                <em></em>
+                            </MenuItem>
+                            <MenuItem value={'AS'}>Aguascalientes</MenuItem>
+                            <MenuItem value={'BC'}>Baja California</MenuItem>
+                            <MenuItem value={'BS'}>Baja California Sur</MenuItem>
+                            <MenuItem value={'CC'}>Campeche</MenuItem>
+                            <MenuItem value={'CS'}>Chiapas</MenuItem>
+                            <MenuItem value={'CH'}>Chihuahua</MenuItem>
+                            <MenuItem value={'CL'}>Coahuila</MenuItem>
+                            <MenuItem value={'CM'}>Colima</MenuItem>
+                            <MenuItem value={'CDMX'}>Ciudad de México</MenuItem>
+                            <MenuItem value={'DG'}>Durango</MenuItem>
+                            <MenuItem value={'GT'}>Guanajuato</MenuItem>
+                            <MenuItem value={'GR'}>Guerrero</MenuItem>
+                            <MenuItem value={'HG'}>Hidalgo</MenuItem>
+                            <MenuItem value={'JC'}>Jalisco</MenuItem>
+                            <MenuItem value={'MC'}>México</MenuItem>
+                            <MenuItem value={'MN'}>Michoacan</MenuItem>
+                            <MenuItem value={'MS'}>Morelos</MenuItem>
+                            <MenuItem value={'NT'}>Nayarit</MenuItem>
+                            <MenuItem value={'NL'}>Nuevo León</MenuItem>
+                            <MenuItem value={'OC'}>Oaxaca</MenuItem>
+                            <MenuItem value={'PL'}>Puebla</MenuItem>
+                            <MenuItem value={'QT'}>Querétaro</MenuItem>
+                            <MenuItem value={'QR'}>Quintana Roo</MenuItem>
+                            <MenuItem value={'SP'}>San Luis Potosí</MenuItem>
+                            <MenuItem value={'SL'}>Sinaloa</MenuItem>
+                            <MenuItem value={'SR'}>Sonora</MenuItem>
+                            <MenuItem value={'TC'}>Tabasco</MenuItem>
+                            <MenuItem value={'TL'}>Tlaxcala</MenuItem>
+                            <MenuItem value={'TS'}>Tamaulipas</MenuItem>
+                            <MenuItem value={'VZ'}>Veracruz</MenuItem>
+                            <MenuItem value={'YN'}>Yucatán</MenuItem>
+                            <MenuItem value={'ZS'}>Zacatecas</MenuItem>
+                        </Select>
+                    </FormControl>
                 </div>
             </div>
             <div class="
-                xl:ml-8 
+                xl:-ml-24
                 lg:ml-12 
                 md:ml-52 md:mt-5
                 xs:ml-24
                 xxs:ml-8">
-                    <text class="text-red-600 font-semibold">*Datos requeridos</text>
+                    <text class="text-white font-semibold">Estoy registrado en DERMAJAL 2022*</text>
+                    <Switch></Switch>
                 </div>
             <div class="bg-teal-500 z-0 rounded-lg absolute 
             xl:w-[415px] xl:h-40 xl:-ml-20 xl:mt-10
@@ -258,34 +350,7 @@ const FormLayout = () => {
                     md:-mt-8 md:ml-72
                     xs:-mt-8 xs:ml-64
                     xxs:-mt-8 xxs:ml-64">
-                    <Radio
-                        checked={isAbbeClient === 'No Soy Cliente Abbe'}
-                        onChange={handleRadioButton}
-                        value="No Soy Cliente Abbe"
-                        name="radio-buttons"
-                        inputProps={{ 'aria-label': 'No Soy Cliente Abbe' }}
-                    />
-                    </div>
-                    <br />
-                    <text class="text-black font-semibold text-lg 
-                    xl:ml-10
-                    lg:ml-10
-                    md:ml-10
-                    xs:ml-10
-                    xxs:ml-10">SOY CLIENTE ABBE</text>
-                    <div class="
-                    xl:-mt-9 xl:ml-72
-                    lg:-mt-9 lg:ml-72
-                    md:-mt-9 md:ml-72
-                    xs:-mt-9 xs:ml-64
-                    xxs:-mt-9 xxs:ml-64">
-                    <Radio
-                        checked={isAbbeClient === 'Soy Cliente Abbe'}
-                        onChange={handleRadioButton}
-                        value="Soy Cliente Abbe"
-                        name="radio-buttons"
-                        inputProps={{ 'aria-label': 'Soy Cliente Abbe' }}
-                    />
+                    <Switch></Switch>
                     </div>
                 </div>
             </div>
