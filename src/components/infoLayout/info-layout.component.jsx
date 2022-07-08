@@ -40,51 +40,84 @@ const InfoLayout = () => {
 
             <div class="
             xl:ml-7
-            lg:-ml-28
-            md:ml-16
-            sm:-ml-6
-            xs:-ml-5
-            xxs:-ml-5">
+            lg:ml-5
+            md:ml-48
+            sm:ml-24
+            xs:ml-20
+            xxs:ml-24">
                 <div class="text-white mt-1
                 xl:text-lg 
                 lg:text-base
                 md:text-lg
                 sm:text-sm
                 xs:text-sm
-                xxs:text-xs"><text>SALÓN</text> <text class="text-fuchsia-500">ZAPOPAN</text></div>
+                xxs:text-xs"><text>SALÓN</text> <text class="text-white">ZAPOPAN</text></div>
             </div>
 
             <div class="bg-white rounded-lg 
-            lg:-ml-32 h-full
-            lg:mt-10 
-            md:ml-5 md:mt-10
-            xs:-ml-9 xs:mt-10
-            xxs:-ml-10 xxs:mt-10">
-                <text class="text-black font-bold 
+            lg:-ml-32 xl:h-[250px]
+            lg:mt-10  lg:h-[230px]
+            md:ml-5 md:mt-10 md:h-[250px]
+            xs:-ml-9 xs:mt-10 
+            xxs:-ml-10 xxs:mt-10 xxs:h-[230px]">
+                <br />
+                <text class="text-black font-bold
                 xl:text-xl
-                lg:text-lg
-                md:text-lg
-                sm:text-lg
-                xs:text-lg
-                xxs:text-lg">17:00 - 20:00 MASTERCLASS PROF. BONAN</text>
+                lg:text-base
+                md:text-lg md:ml-9
+                sm:text-base
+                xs:text-base 
+                xxs:text-base xxs:ml-3">17:00 - 20:00 MASTERCLASS PROF. BONAN</text>
+                <br />
+                <text class="text-black font-bold
+                xl:text-xl
+                lg:text-base
+                md:text-lg md:ml-9
+                sm:text-base
+                xs:text-base 
+                xxs:text-base xxs:ml-3">TEMAS:</text>
+                <br />
+                <text class="text-black font-bold
+                xl:text-xl
+                lg:text-base
+                md:text-lg md:ml-9
+                sm:text-base
+                xs:text-base 
+                xxs:text-base xxs:ml-3">CO2 HYBRIDO | DUO GLIDE</text>
+                <br />
+                <text class="text-black font-bold
+                xl:text-xl
+                lg:text-base
+                md:text-lg md:ml-9
+                sm:text-base
+                xs:text-base 
+                xxs:text-base xxs:ml-3">LÁSER PICOSEGUNDO | SMARTPICO</text>
+                <br />
+                <text class="text-black font-bold
+                xl:text-xl
+                lg:text-base
+                md:text-lg md:ml-9
+                sm:text-base
+                xs:text-base 
+                xxs:text-base xxs:ml-3">COLORANTE PULSADO | SYNCHRO VASQ</text>
                 <br />
                 <br />
-                <text class="text-black font-bold 
+                <text class="text-black font-bold
                 xl:text-xl 
-                lg:text-lg
-                md:text-lg
-                sm:text-lg
-                xs:text-lg
-                xxs:text-lg">20:00 - 22:00 COCTÉL Y CATA DE VINO</text>
+                lg:text-base
+                md:text-lg md:ml-9
+                sm:text-base
+                xs:text-base
+                xxs:text-base xxs:ml-3">20:00 - 22:00 COCTÉL Y CATA DE VINO</text>
             </div>
 
             <div class="
-            xl:mt-8 xl:-ml-16 xl:w-[320px] 
-            lg:w-[260px] lg:mt-8 lg:-ml-16 
-            md:ml-28 md:mt-10 md:w-[350px]
-            sm:-ml-8 sm:mt-10 sm:w-[350px]
-            xs:-ml-8 xs:mt-10 xs:w-[350px]
-            xxs:-ml-8 xxs:mt-10 xxs:w-[350px]">
+            xl:mt-28 xl:-ml-16 xl:w-[320px] 
+            lg:w-[260px] lg:mt-36 lg:-ml-16 
+            md:ml-28 md:mt-28 md:w-[350px]
+            sm:-ml-8 sm:mt-20 sm:w-[350px]
+            xs:-ml-8 xs:mt-36 xs:w-[350px]
+            xxs:-ml-8 xxs:mt-36 xxs:w-[350px]">
                 <a href="https://wa.me/525579330121?text=tengo dudas del DEKA MASTERCLASS" rel="noreferrer" target="_blank" class="
                 font-bold absolute italic underline
                 xl:ml-32 xl:text-xl xl:mt-16
@@ -100,8 +133,8 @@ const InfoLayout = () => {
 <br />
             <div class="
             lg:-ml-24 lg:mt-8 
-            md:ml-5 md:mt-8
-            xs:ml-5 xs:mt-8
+            md:ml-5 md:mt-1
+            xs:ml-5 xs:-mt-5
             xxs:ml-5 xxs:mt-8">
                 <text class="text-white font-light 
                 xl:text-2xl 

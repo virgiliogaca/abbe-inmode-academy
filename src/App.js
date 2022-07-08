@@ -9,13 +9,13 @@ import {FormLayout} from "./components/formLayout"
 function App() {
   return (
     <div class="bg-layout-image  
-    2xl:h-[2350px]
+    2xl:h-[2450px]
     xl:h-[2350px] 
     lg:h-[2300px] 
-    md:h-[3300px]
-    sm:h-[3100px]
-    xs:h-[4200px] 
-    xxs:h-[4550px]">
+    md:h-[3000px]
+    sm:h-[3000px]
+    xs:h-[3000px] 
+    xxs:h-[3000px]">
       <div class="absolute 
       2xl:ml-[33%] 2xl:mt-28 2xl:w-[600px] 
       xl:w-[500px] xl:ml-[34%] xl:mt-24 
@@ -66,7 +66,7 @@ function App() {
         md:text-xl md:ml-28
         sm:text-lg sm:ml-20
         xs:text-base xs:ml-16
-        xxs:text-sm xxs:ml-14"><text class="text-white">EN</text><text class="text-fuchsia-500"> SALÓN ZAPOPAN</text></div>
+        xxs:text-sm xxs:ml-14"><text class="text-white">EN</text><text class="text-white"> SALÓN ZAPOPAN</text></div>
       </div>
       <div class="absolute
       2xl:mt-[550px] 2xl:ml-[31%] 2xl:w-[700px]
@@ -116,20 +116,20 @@ function App() {
       2xl:mt-[1300px] 2xl:ml-[30%] 
       xl:mt-[1200px] xl:ml-[26%] 
       lg:mt-[1100px] lg:ml-[24%] 
-      md:mt-[2450px] md:ml-[15%] 
-      sm:mt-[2300px] sm:ml-[30%]
-      xs:mt-[3350px] xs:ml-[16%]
-      xxs:mt-[3350px] xxs:ml-[14%]">
+      md:mt-[2200px] md:ml-[15%] 
+      sm:mt-[2150px] sm:ml-[30%]
+      xs:mt-[2100px] xs:ml-[16%]
+      xxs:mt-[2050px] xxs:ml-[14%]">
         <InfoLayout/>
       </div>
       <div class="absolute 
       2xl:mt-[1300px] 2xl:ml-[60%] 
       xl:mt-[1200px] xl:ml-[63%] 
       lg:mt-[1100px] lg:ml-[60%] 
-      md:mt-[1150px] md:ml-[15%]
-      sm:mt-[1020px] sm:ml-[15%] 
-      xs:mt-[2050px] xs:ml-[5%]
-      xxs:mt-[2050px] xxs:ml-[5%]">
+      md:mt-[1050px] md:ml-[15%]
+      sm:mt-[980px] sm:ml-[24%] 
+      xs:mt-[850px] xs:ml-[5%]
+      xxs:mt-[800px] xxs:ml-[5%]">
         <FormLayout/>
       </div>
     </div>
