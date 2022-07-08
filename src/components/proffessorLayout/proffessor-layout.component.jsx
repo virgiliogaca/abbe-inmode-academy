@@ -1,70 +1,35 @@
-import salvatore from '../../assets/Salvatore-Pagano.png'
-import stephen from '../../assets/Stephen-Mulholland.png'
-import mulhollandCV from '../../assets/Mulholland-CV.pdf'
-import salvatoreCV from '../../assets/Salvatore-CV.pdf'
+import bonan from '../../assets/bonan.png'
+import bonanCV from '../../assets/bonan_cv.pdf'
 
 const ProffessorLayout = () => {
     return (
         <div class="">
             <div class="
             2xl:-ml-14
-            xl:-ml-28
-            lg:space-x-44
-            sm:flex sm:items-center sm:space-x-32 sm:ml-0
-            xs:ml-28
-            xxs:ml-[105px]">
+            xl:ml-32
+            lg:ml-56
+            md:ml-32
+            sm:ml-20
+            xs:ml-1
+            xxs:ml-1">
                 <div class="mt-11">
-                    <img src={stephen} class="
-                    2xl:w-72
-                    xl:w-72
-                    lg:w-60" alt="" />
-                    <text class="font-bold text-white
-                    2xl:ml-1 2xl:text-xl 
-                    xl:text-xl
-                    lg:text-lg lg:ml-0
-                    md:text-lg md:ml-3
-                    sm:text-lg sm:ml-3
-                    xs:-ml-6 xs:text-2xl
-                    xxs:-ml-6 xxs:text-2xl">DR. STEPHEN MULHOLLAND</text>
-                    <br />
-                    <br />
-                    <text class="text-teal-300 font-light
-                    2xl:ml-16 2xl:text-xl
-                    xl:text-xl xl:ml-16
-                    lg:text-lg lg:ml-16
-                    md:text-lg md:ml-20
-                    sm:text-lg sm:ml-16
-                    xs:ml-16 xs:text-xl
-                    xxs:ml-16 xxs:text-xl">
-                        <a href={mulhollandCV} rel="noreferrer" target="_blank">
-                            Descarga su CV
-                        </a>
-                    </text>
-                </div>
-                <div class="mt-11">
-                    <img src={salvatore} class="
-                    2xl:w-72
-                    xl:w-72
-                    lg:w-60" alt="" />
-                    <text class="text-white font-bold
-                    2xl:ml-6 2xl:text-xl
-                    xl:text-xl xl:ml-6
-                    lg:text-lg lg:ml-2
-                    md:text-lg md:ml-10
-                    sm:text-lg sm:ml-10
-                    xs:ml-1 xs:text-2xl
-                    xxs:ml-0 xxs:text-2xl">DR. SALVATORE PAGANO</text>
-                    <br />
-                    <br />
-                    <text class="text-teal-300 font-light
-                    2xl:ml-20 2xl:text-xl
-                    xl:text-xl xl:ml-20
-                    lg:text-lg lg:ml-16
-                    md:text-lg md:ml-20
-                    sm:text-lg sm:ml-20
-                    xs:text-xl xs:ml-20
-                    xxs:text-xl xxs:ml-20">
-                        <a href={salvatoreCV} rel="noreferrer" target="_blank">
+                    <img src={bonan} class="
+                    2xl:w-[800px]
+                    xl:w-[680px]
+                    lg:w-[600px]
+                    md:w-[580px]
+                    sm:w-[550px]
+                    xs:w-[450px]" alt="" />
+
+                    <text class="text-white absolute italic
+                    2xl:ml-[400px] 2xl:-mt-[50px] 2xl:text-3xl
+                    xl:text-2xl xl:ml-[350px] xl:-mt-[50px]
+                    lg:text-xl lg:ml-[290px] lg:-mt-[42px]
+                    md:text-lg md:ml-[290px] md:-mt-[42px]
+                    sm:text-lg sm:ml-[290px] sm:-mt-[42px]
+                    xs:text-base xs:ml-[220px] xs:-mt-[38px]
+                    xxs:text-sm xxs:ml-[180px] xxs:-mt-[28px]">
+                        <a href={bonanCV} rel="noreferrer" target="_blank">
                             Descarga su CV
                         </a>
                     </text>
